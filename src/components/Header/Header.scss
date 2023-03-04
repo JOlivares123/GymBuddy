@@ -6,8 +6,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    font-weight: bold;
+    font-weight: bolder;
     color: white;
     border-bottom: 1px solid white;
+}
+
+.Header-logo {
+    width:50%;
+    max-width: 72px;
+}
+
+.Header-font {
+    font-weight: bolder !important;
 }
