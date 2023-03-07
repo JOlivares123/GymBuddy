@@ -5,7 +5,7 @@ import './App.scss';
 
 const App = () => {
   return (
-    <div>
+    <div className='App-container'>
       <Routes>
         <Route path='/' element={<LandingPage/>}/>
         <Route path='/login' element={<LoginPage/>} />

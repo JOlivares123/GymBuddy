@@ -1,5 +1,18 @@
 .Hero {
     width: 100vw;
-    height: 100vh;
+    height: 30vh;
     display: block;
+}
+
+.Hero-main-text {
+    font-weight: bolder;
+    text-align: center;
+    letter-spacing: 0.04em;
+    padding-top: 75px;
+}
+
+.Hero-subtext {
+    text-align: center;
+    margin-left:25px;
+    margin-right: 25px;
 }

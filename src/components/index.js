@@ -1,2 +1,3 @@
 export { Header } from './Header/Header'
-export {Hero} from './Hero/Hero'
+export { Hero } from './Hero/Hero'
+export { CustButton } from './Button/CustButton'
