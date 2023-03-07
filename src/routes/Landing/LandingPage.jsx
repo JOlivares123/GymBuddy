@@ -5,6 +5,7 @@ export const LandingPage = () => {
   return(
     <>
       <Hero />
+      <br/>
       <KeyFeatures />
     </>
   )
