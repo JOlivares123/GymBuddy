@@ -16,9 +16,9 @@ export const Hero = () => {
             <p className='Hero-subtext'>
                 We track workout sessions to generate stats for your progress.
             </p>
-            <div className='pt-4 text-center'>
-                <CustButton className='me-3' text='Sign Up' color='yellow'/>
-                <CustButton  className='' text='Login' color='pink'/>
+            <div className='pt-4 text-center d-md-block'>
+                <CustButton link='/signup' className='me-3' text='Sign Up' color='yellow'/>
+                <CustButton link='/login' className='' text='Login' color='pink'/>
             </div>
         </div>
     )
