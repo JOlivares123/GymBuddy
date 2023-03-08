@@ -1,4 +1,6 @@
 import { useForm } from "react-hook-form"
+
+import {isMobile} from './../../utils/WindowSize'
 import { CustButton } from "../../components/Button/CustButton"
 import './SignupPage.scss'
 
@@ -24,7 +26,7 @@ export const SignupPage = () => {
                     <input type="password" className="form-control TransparentInput white" id="password"/>
                 </div>
             </form>
-            <CustButton text='Sign Up' className='px-4 mt-3' />
+            <CustButton text='Sign Up' className={isMobile() ? 'col-7 mt-3' : 'px-4 mt-3'} />
             <h5 className="mt-5">Already a user? <a className='white' href="/login"> Login</a></h5>
         </>
     )

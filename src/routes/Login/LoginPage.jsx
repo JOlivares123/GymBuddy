@@ -1,4 +1,5 @@
 import { CustButton } from '../../components/Button/CustButton'
+import { isMobile } from '../../utils/WindowSize'
 import './LoginPage.scss'
 
 export const LoginPage = () => {
@@ -15,7 +16,7 @@ export const LoginPage = () => {
                     <input type="password" className="form-control TransparentInput white" id="password"/>
                 </div>
             </form>
-            <CustButton text='Login' className='px-4 mt-3' />
+            <CustButton text='Login' className={isMobile() ? 'col-7 mt-3' : 'px-4 mt-3'} />
             <h5 className="mt-5">Need an account? <a className='white' href="/signup"> Sign Up</a></h5>
         </>
     )
