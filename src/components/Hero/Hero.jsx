@@ -1,4 +1,5 @@
 import { CustButton } from '../Button/CustButton'
+import {isMobile} from './../../utils/WindowSize'
 import './Hero.scss'
 
 export const Hero = () => {
@@ -16,8 +17,9 @@ export const Hero = () => {
             <p className='Hero-subtext'>
                 We track workout sessions to generate stats for your progress.
             </p>
-            <div className='pt-4 text-center d-md-block'>
-                <CustButton link='/signup' className='me-3' text='Sign Up' color='yellow'/>
+            
+            <div className={isMobile() ? 'd-flex flex-column' : 'pt-4 text-center'}>
+                <CustButton link='/signup' className={isMobile() ? 'mb-2' : 'me-3'} text='Sign Up' color='yellow'/>
                 <CustButton link='/login' className='' text='Login' color='pink'/>
             </div>
         </div>
