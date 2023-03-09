@@ -1,3 +1,5 @@
+import {useForm} from 'react-hook-form'
+
 import { CustButton } from '../../components/Button/CustButton'
 import { isMobile } from '../../utils/WindowSize'
 import './LoginPage.scss'

@@ -1,3 +1,10 @@
+:root{
+  --primary-orange: #EB4828;
+  --primary-pink:#EB286A;
+  --primary-yellow: #EBAA28;
+  --base-color: #13141C;
+}
+
 body {
   background-color:#13141C;
   color: #FFFFFF;
@@ -6,6 +13,11 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-weight: bolder;
+  letter-spacing: 0.04em;
 }
 
 code {

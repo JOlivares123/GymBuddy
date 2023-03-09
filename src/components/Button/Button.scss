@@ -1,39 +1,39 @@
 .btn-yellow-gm {
     --bs-btn-font-weight: 600;
     --bs-btn-color: white;
-    --bs-btn-bg: #EBAA28;
+    --bs-btn-bg: var(--primary-yellow);
     --bs-btn-border-color: none;
     --bs-btn-border-radius: 10px;
     --bs-btn-hover-color: white;
     --bs-btn-hover-bg:  #edbb58;
     --bs-btn-focus-shadow-rgb: black;
     --bs-btn-active-color: var(--bs-btn-hover-color);
-    --bs-btn-active-bg: #{shade-color(#EBAA28, 20%)};
+    --bs-btn-active-bg: #{shade-color(var(--primary-yellow), 20%)};
 }
 
 .btn-orange-gm {
     --bs-btn-font-weight: 600;
     --bs-btn-color: white;
-    --bs-btn-bg: #EB4828;
+    --bs-btn-bg: var(--primary-orange);
     --bs-btn-border-color: none;
     --bs-btn-border-radius: 10px;
     --bs-btn-hover-color: white;
     --bs-btn-hover-bg:  #e66950;
     --bs-btn-focus-shadow-rgb: black;
     --bs-btn-active-color: var(--bs-btn-hover-color);
-    --bs-btn-active-bg: #{shade-color(#EB4828, 20%)};
+    --bs-btn-active-bg: #{shade-color(var(--primary-orange), 20%)};
 }
 
 .btn-pink-gm {
     --bs-btn-font-weight: 600;
     --bs-btn-color: white;
-    --bs-btn-bg: #EB286A;
+    --bs-btn-bg: var(--primary-pink);
     --bs-btn-border-color: none;
     --bs-btn-border-radius: 10px;
     --bs-btn-hover-color: white;
     --bs-btn-hover-bg:  #e8437b;
     --bs-btn-focus-shadow-rgb: #e63571;
     --bs-btn-active-color: var(--bs-btn-hover-color);
-    --bs-btn-active-bg: #{shade-color(#EB286A, 20%)};
+    --bs-btn-active-bg: #{shade-color(var(--primary-pink), 20%)};
 }
 

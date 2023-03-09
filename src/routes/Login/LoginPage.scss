@@ -6,3 +6,7 @@
 .white {
     color: white;
 }
+
+a:active, a:hover{
+    color: var(--primary-orange)
+}
