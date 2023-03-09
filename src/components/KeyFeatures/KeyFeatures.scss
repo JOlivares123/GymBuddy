@@ -4,13 +4,11 @@
 }
 
 .main-text {
-    font-weight: bolder;
     text-align: center;
-    letter-spacing: 0.04em;
     color: white;
 }
 
 .features {
-    background-color: #1F2028;
+    background-color: var(--base-secondary-color);
     width: 90vw;
 }
