@@ -1,0 +1,20 @@
+.Tile {
+    padding: 50px;
+    border-radius: 14px;
+    width: 300px;
+    height: auto;
+    background-color: var(--base-secondary-color);
+}
+
+@media screen and (max-width: 767px){
+    .TileMobile {
+        margin-bottom: 20px;
+        width: 95%;
+        max-width: 355px;
+    }
+}
+@media screen and (min-width: 768px){
+    .TileAboveMobile {
+        margin-right: 20px;
+    }
+}
