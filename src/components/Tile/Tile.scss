@@ -1,16 +1,33 @@
+.orange {
+    color: var(--primary-orange);
+    font-weight: bolder;
+}
+.pink {
+    color: var(--primary-pink);
+    font-weight: bolder;
+}
+.yellow {
+    color: var(--primary-yellow);
+    font-weight: bolder;
+}
+
 .Tile {
-    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 44px;
     border-radius: 14px;
-    width: 300px;
     height: auto;
+    min-height: 302px;
     background-color: var(--base-secondary-color);
+    flex-shrink: 1;
 }
 
 @media screen and (max-width: 767px){
     .TileMobile {
         margin-bottom: 20px;
-        width: 95%;
         max-width: 355px;
+        width: 355px;
     }
 }
 @media screen and (min-width: 768px){

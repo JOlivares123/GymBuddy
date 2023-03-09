@@ -1,0 +1,23 @@
+[
+    {
+        "buttonTxt": "START WORKOUT",
+        "buttonColor": "yellow",
+        "title": "Work Out",
+        "desc": "Pick one of your workout programs and start a work out session!",
+        "link": "/workout"
+    },
+    { 
+        "buttonTxt": "CHECK HISTORY",
+        "buttonColor": "pink",
+        "title": "Stats",
+        "desc": "Check working out history + stats on previous workout sessions!",
+        "link": "/stats"
+    },
+    {
+        "buttonTxt": "GO TO PROFILE",
+        "buttonColor": "orange",
+        "title": "Profile",
+        "desc": "Go to profile to change your picture, check milestones, sign out and more.",
+        "link": "/stats"
+    }
+]
