@@ -13,8 +13,8 @@ import { Header } from './components';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Header />
     <BrowserRouter>
+      <Header />
       <App />
     </BrowserRouter>
   </React.StrictMode>
