@@ -12,7 +12,7 @@ import { data } from "./data";
 
 export const WorkoutPage = () => {
   const [step, setStep] = useState(1);
-  console.log(data);
+  console.log(data, setStep);
 
   const renderCurrentStep = () => {
     switch (step) {

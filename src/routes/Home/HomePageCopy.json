@@ -1,12 +1,14 @@
 [
     {
+        "key": 1,
         "buttonTxt": "START WORKOUT",
         "buttonColor": "yellow",
         "title": "Work Out",
         "desc": "Pick one of your workout programs and start a work out session!",
         "link": "/workout"
     },
-    { 
+    {
+        "key": 2, 
         "buttonTxt": "CHECK HISTORY",
         "buttonColor": "pink",
         "title": "Stats",
@@ -14,6 +16,7 @@
         "link": "/stats"
     },
     {
+        "key": 3,
         "buttonTxt": "GO TO PROFILE",
         "buttonColor": "orange",
         "title": "Profile",

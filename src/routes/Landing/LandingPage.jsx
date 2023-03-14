@@ -1,12 +1,12 @@
-import { Hero, KeyFeatures } from '../../components'
-import './LandingPage.scss'
+import { Hero, KeyFeatures } from "../../components";
+import "./LandingPage.scss";
 
 export const LandingPage = () => {
-  return(
+  return (
     <>
       <Hero />
-      <br/>
+      <br />
       <KeyFeatures />
     </>
-  )
-}
+  );
+};
