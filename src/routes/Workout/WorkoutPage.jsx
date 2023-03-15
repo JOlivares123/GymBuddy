@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 import {
   PerformWorkout,
@@ -10,14 +11,20 @@ import {
 // mock data until backend is built
 import { data } from "./data";
 
-export const WorkoutPage = () => {
+export const WorkoutPage = ({ programs = data.programs }) => {
   const [step, setStep] = useState(1);
-  console.log(data, setStep);
+  // used to keep track how many sets have been performed throughout workout
+  // const [numSets, setNumSets] = useState(0);
+  // const [selectedProgram, setSelectedProgram] = useState(null);
+  // const [selectedDay, setSelectedDay] = useState(null);
+  // const [selectedWorkout, setSelectedWorkout] = useState(null);
+  // const [completedWorkouts, setCompletedWorkouts] = useState(null);
+  console.log(programs, setStep);
 
   const renderCurrentStep = () => {
     switch (step) {
       case 1:
-        return <SelectProgram />;
+        return <SelectProgram myPrograms={programs} />;
       case 2:
         return <SelectDay />;
       case 3:
@@ -29,10 +36,9 @@ export const WorkoutPage = () => {
       default:
     }
   };
-  return (
-    <div>
-      hello workout page - main
-      {renderCurrentStep()}
-    </div>
-  );
+  return <>{renderCurrentStep(programs)}</>;
+};
+
+WorkoutPage.propTypes = {
+  programs: PropTypes.array,
 };

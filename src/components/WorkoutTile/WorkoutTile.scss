@@ -1,0 +1,23 @@
+.Tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 44px;
+    border-radius: 14px;
+    height: auto;
+    min-height: 302px;
+    background-color: var(--base-secondary-color);
+    flex-shrink: 1;
+}
+
+@media screen and (max-width: 767px){
+    .TileMobile {
+        max-width: 355px;
+        width: 355px;
+    }
+}
+@media screen and (min-width: 768px){
+    .TileAboveMobile {
+        margin-right: 20px;
+    }
+}

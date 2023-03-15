@@ -1,5 +1,5 @@
 export const data = {
-  progams: [
+  programs: [
     {
       id: 1,
       // 3 mins in ms
@@ -24,7 +24,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["chest"],
+              muscles_worked: ["Chest"],
             },
             {
               workout_name: ["Neutral Bench Press"],
@@ -36,7 +36,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["chest"],
+              muscles_worked: ["Chest"],
             },
             {
               workout_name: ["Cable Upper Back Pulldown"],
@@ -48,7 +48,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["Back"],
+              muscles_worked: ["Upper Back"],
             },
             {
               workout_name: ["Lat Row"],
@@ -72,7 +72,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["front shoulder"],
+              muscles_worked: ["Shoulder"],
             },
           ],
         },
@@ -104,7 +104,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["tricep", "tricep"],
+              muscles_worked: ["Tricep", "Tricep"],
             },
             {
               workout_name: ["Cable faceaway bicep curl"],
@@ -116,7 +116,7 @@ export const data = {
                   max_reps: 9,
                 },
               ],
-              muscles_worked: ["long head - bicep"],
+              muscles_worked: ["Bicep"],
             },
             {
               workout_name: ["Dumbbell hammer curl"],
@@ -128,7 +128,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["bicep"],
+              muscles_worked: ["Bicep"],
             },
             {
               workout_name: ["Spider curl machine"],
@@ -140,7 +140,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["short head - bicep"],
+              muscles_worked: ["Bicep"],
             },
             {
               workout_name: ["rear delt cable fly"],
@@ -152,7 +152,7 @@ export const data = {
                   max_reps: 9,
                 },
               ],
-              muscles_worked: ["back shoulder"],
+              muscles_worked: ["Shoulder"],
             },
           ],
         },
@@ -175,7 +175,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["hamstring + butt"],
+              muscles_worked: ["Hamstrings", "Glutes"],
             },
             {
               workout_name: ["Hack Squat"],
@@ -187,7 +187,7 @@ export const data = {
                   max_reps: 9,
                 },
               ],
-              muscles_worked: ["quads + butt"],
+              muscles_worked: ["Quads", "Glutes"],
             },
             {
               workout_name: ["quad extension"],
@@ -199,7 +199,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["quads"],
+              muscles_worked: ["Quads"],
             },
             {
               workout_name: ["hamstring curl"],
@@ -211,7 +211,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["hamstrings"],
+              muscles_worked: ["Hamstrings"],
             },
             {
               workout_name: ["side shoulder raise"],
@@ -223,7 +223,7 @@ export const data = {
                   max_reps: 9,
                 },
               ],
-              muscles_worked: ["side shoulder"],
+              muscles_worked: ["Shoulder"],
             },
           ],
         },
@@ -254,7 +254,7 @@ export const data = {
                   max_reps: 9,
                 },
               ],
-              muscles_worked: ["long head - bicep"],
+              muscles_worked: ["Bicep"],
             },
             {
               workout_name: ["Dumbbell hammer curl"],
@@ -266,7 +266,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["bicep"],
+              muscles_worked: ["Bicep"],
             },
             {
               workout_name: ["Spider curl machine"],
@@ -278,7 +278,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["short head - bicep"],
+              muscles_worked: ["Bicep"],
             },
             {
               workout_name: ["Cable Upper Back Pulldown"],
@@ -290,7 +290,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["Back"],
+              muscles_worked: ["Upper Back"],
             },
             {
               workout_name: ["Lat Row"],
@@ -325,7 +325,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["chest"],
+              muscles_worked: ["Chest"],
             },
             {
               workout_name: ["Neutral Bench Press"],
@@ -337,7 +337,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["chest"],
+              muscles_worked: ["Chest"],
             },
             {
               workout_name: ["Shoulder Press - front"],
@@ -349,7 +349,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["front shoulder"],
+              muscles_worked: ["Shoulder"],
             },
             {
               workout_name: [
@@ -370,7 +370,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["tricep", "tricep"],
+              muscles_worked: ["Tricep", "Tricep"],
             },
             {
               workout_name: ["rear delt cable fly"],
@@ -382,7 +382,7 @@ export const data = {
                   max_reps: 9,
                 },
               ],
-              muscles_worked: ["back shoulder"],
+              muscles_worked: ["Shoulder"],
             },
           ],
         },
@@ -405,7 +405,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["hamstring + butt"],
+              muscles_worked: ["Hamstrings", "Glutes"],
             },
             {
               workout_name: ["Hack Squat"],
@@ -417,7 +417,7 @@ export const data = {
                   max_reps: 9,
                 },
               ],
-              muscles_worked: ["quads + butt"],
+              muscles_worked: ["Quads", "Glutes"],
             },
             {
               workout_name: ["quad extension"],
@@ -429,7 +429,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["quads"],
+              muscles_worked: ["Quads"],
             },
             {
               workout_name: ["hamstring curl"],
@@ -441,7 +441,7 @@ export const data = {
                   max_reps: 8,
                 },
               ],
-              muscles_worked: ["hamstrings"],
+              muscles_worked: ["Hamstrings"],
             },
             {
               workout_name: ["side shoulder raise"],
@@ -453,7 +453,7 @@ export const data = {
                   max_reps: 9,
                 },
               ],
-              muscles_worked: ["side shoulder"],
+              muscles_worked: ["Shoulder"],
             },
           ],
         },
