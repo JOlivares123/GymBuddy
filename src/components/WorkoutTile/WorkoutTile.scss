@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 44px;
+    padding: 30px;
     border-radius: 14px;
     height: auto;
     min-height: 302px;
@@ -14,10 +14,5 @@
     .TileMobile {
         max-width: 355px;
         width: 355px;
-    }
-}
-@media screen and (min-width: 768px){
-    .TileAboveMobile {
-        margin-right: 20px;
     }
 }

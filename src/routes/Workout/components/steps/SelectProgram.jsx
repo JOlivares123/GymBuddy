@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
 
-import { Carousel, WorkoutTile } from "./../../../../components";
+import { Carousel, CustButton, WorkoutTile } from "./../../../../components";
 
-export const SelectProgram = ({ myPrograms }) => {
+export const SelectProgram = ({ myPrograms, next, selectProgram }) => {
+  console.log(myPrograms);
   return (
     <div className="d-block pt-5">
       <h2 className="fw-bold pb-4">Select Workout Program</h2>
+      <br />
       <Carousel>
         {myPrograms.map((program) => {
           var muscles = program.days.map((day) => {
@@ -29,15 +31,28 @@ export const SelectProgram = ({ myPrograms }) => {
                 title={program.name}
                 items={muscles}
                 showEdit={true}
+                onClick={() => {
+                  selectProgram(program.id);
+                  next();
+                }}
               />
             </div>
           );
         })}
       </Carousel>
+      <div className="mt-5">
+        <CustButton
+          text="Create New Program"
+          color="yellow"
+          className="mt-5 btn-lg"
+        />
+      </div>
     </div>
   );
 };
 
 SelectProgram.propTypes = {
   myPrograms: PropTypes.arrayOf(PropTypes.object),
+  next: PropTypes.func,
+  selectProgram: PropTypes.func,
 };
