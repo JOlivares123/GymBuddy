@@ -16,7 +16,9 @@ export const WorkoutPage = ({ programs = data.programs }) => {
   // used to keep track how many sets have been performed throughout workout
   // const [numSets, setNumSets] = useState(0);
   const [selectedProgram, setSelectedProgram] = useState(null);
-  // const [selectedDay, setSelectedDay] = useState(null);
+  // gets set in 1st step then used(read) in second step.
+  const [selectedProgramDayTitles, setSelectedProgramDayTitles] = useState([]);
+  const [selectedDay, setSelectedDay] = useState(null);
   // const [selectedWorkout, setSelectedWorkout] = useState(null);
   // const [completedWorkouts, setCompletedWorkouts] = useState(null);
 
@@ -29,6 +31,7 @@ export const WorkoutPage = ({ programs = data.programs }) => {
 
     setSelectedProgram(selected);
   };
+
   const nextStep = () => {
     setStep(step + 1);
   };
@@ -47,19 +50,31 @@ export const WorkoutPage = ({ programs = data.programs }) => {
             next={nextStep}
             selectProgram={selectProgram}
             myPrograms={programs}
+            setSelectedProgramDayTitles={setSelectedProgramDayTitles}
           />
         );
       case 2:
         return (
           <SelectDay
             program={selectedProgram}
+            setSelectedProgram={setSelectedProgram}
+            next={nextStep}
+            prev={prevStep}
+            step={step}
+            selectedProgramDayTitles={selectedProgramDayTitles}
+            setSelectedProgramDayTitles={setSelectedProgramDayTitles}
+            setSelectedDay={setSelectedDay}
+          />
+        );
+      case 3:
+        return (
+          <SelectWorkout
+            selectedDay={selectedDay}
             next={nextStep}
             prev={prevStep}
             step={step}
           />
         );
-      case 3:
-        return <SelectWorkout next={nextStep} prev={prevStep} step={step} />;
       case 4:
         return <Rest next={nextStep} prev={prevStep} step={step} />;
       case 5:

@@ -2,8 +2,20 @@ import PropTypes from "prop-types";
 
 import { Carousel, CustButton, WorkoutTile } from "./../../../../components";
 
-export const SelectProgram = ({ myPrograms, next, selectProgram }) => {
-  console.log(myPrograms);
+export const SelectProgram = ({
+  myPrograms,
+  next,
+  selectProgram,
+  setSelectedProgramDayTitles,
+}) => {
+  // handles logic for continuing flow
+  const continueToSecondStep = (programId, muscles) => {
+    selectProgram(programId);
+    next();
+    // save titles to use in second step
+    setSelectedProgramDayTitles(muscles);
+  };
+
   return (
     <div className="d-block pt-5">
       <h2 className="fw-bold pb-4">Select Workout Program</h2>
@@ -20,10 +32,11 @@ export const SelectProgram = ({ myPrograms, next, selectProgram }) => {
             return Array.from(new Set(group));
           });
           //   join every list inside muscles to make one string
-          muscles = muscles.map((group) => {
-            return group.join(", ");
+          muscles = muscles.map((group, indx) => {
+            var musclesJoined = group.join(", ");
+            // append copy
+            return `Day ${indx + 1}: ${musclesJoined}`;
           });
-          console.log(muscles);
 
           return (
             <div className="d-flex justify-content-center" key={program.id}>
@@ -31,10 +44,7 @@ export const SelectProgram = ({ myPrograms, next, selectProgram }) => {
                 title={program.name}
                 items={muscles}
                 showEdit={true}
-                onClick={() => {
-                  selectProgram(program.id);
-                  next();
-                }}
+                onClick={() => continueToSecondStep(program.id, muscles)}
               />
             </div>
           );
@@ -55,4 +65,5 @@ SelectProgram.propTypes = {
   myPrograms: PropTypes.arrayOf(PropTypes.object),
   next: PropTypes.func,
   selectProgram: PropTypes.func,
+  setSelectedProgramDayTitles: PropTypes.func,
 };

@@ -10,9 +10,7 @@ export const WorkoutTile = ({ title, items, showEdit = false, onClick }) => {
       <h3 className="fw-bold">{title}</h3>
       <div className="text-start">
         {items.map((item, indx) => {
-          return (
-            <li className="pb-1" key={indx}>{`Day ${indx + 1}: ${item}`}</li>
-          );
+          return <li key={indx}>{item}</li>;
         })}
       </div>
 
