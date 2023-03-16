@@ -7,7 +7,7 @@ export const WorkoutTile = ({ title, items, showEdit = false, onClick }) => {
   return (
     <div className={`Tile TileAboveMobile TileMobile d-flex`}>
       <h3 className="fw-bold">{title}</h3>
-      <div className="text-start">
+      <div className="text-start Items">
         {items.map((item, indx) => {
           return <li key={indx}>{item}</li>;
         })}
@@ -20,7 +20,11 @@ export const WorkoutTile = ({ title, items, showEdit = false, onClick }) => {
           color="yellow"
           onClick={onClick}
         />
-        {showEdit && <div> Edit button here</div>}
+        {showEdit && (
+          <div className="pt-1">
+            <u>Edit</u>
+          </div>
+        )}
       </div>
     </div>
   );
