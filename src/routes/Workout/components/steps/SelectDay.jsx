@@ -8,15 +8,12 @@ export const SelectDay = ({
   program,
   next,
   prev,
-  step,
   setSelectedProgram,
   selectedProgramDayTitles,
   setSelectedProgramDayTitles,
   setSelectedDay,
 }) => {
-  console.log(program, next, prev, step, setSelectedDay);
   const { days } = program;
-  console.log(days);
 
   const returnToFirstStep = () => {
     // update step, selectedProgramDayTitles, selectedProgram state
@@ -49,7 +46,6 @@ export const SelectDay = ({
       <Carousel>
         {days.map((day, indx) => {
           const { workouts_needed } = day;
-          console.log(indx, workouts_needed);
           // join workouts_needed into a string instead of array
           const tileItems = workouts_needed.map((wo) => {
             return wo.workout_name.length > 1
@@ -77,7 +73,6 @@ SelectDay.propTypes = {
   program: PropTypes.object,
   next: PropTypes.func,
   prev: PropTypes.func,
-  step: PropTypes.number,
   setSelectedProgram: PropTypes.func,
   selectedProgramDayTitles: PropTypes.arrayOf(PropTypes.string),
   setSelectedProgramDayTitles: PropTypes.func,

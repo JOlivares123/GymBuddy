@@ -4,7 +4,6 @@ import { CustButton } from "../Button/CustButton";
 import "./WorkoutTile.scss";
 
 export const WorkoutTile = ({ title, items, showEdit = false, onClick }) => {
-  console.log(showEdit);
   return (
     <div className={`Tile TileAboveMobile TileMobile d-flex`}>
       <h3 className="fw-bold">{title}</h3>
@@ -21,6 +20,7 @@ export const WorkoutTile = ({ title, items, showEdit = false, onClick }) => {
           color="yellow"
           onClick={onClick}
         />
+        {showEdit && <div> Edit button here</div>}
       </div>
     </div>
   );

@@ -60,7 +60,6 @@ export const WorkoutPage = ({ programs = data.programs }) => {
             setSelectedProgram={setSelectedProgram}
             next={nextStep}
             prev={prevStep}
-            step={step}
             selectedProgramDayTitles={selectedProgramDayTitles}
             setSelectedProgramDayTitles={setSelectedProgramDayTitles}
             setSelectedDay={setSelectedDay}
