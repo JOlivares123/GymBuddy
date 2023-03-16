@@ -46,13 +46,19 @@ export const SelectDay = ({
       <Carousel>
         {days.map((day, indx) => {
           const { workouts_needed } = day;
+
           // join workouts_needed into a string instead of array
           const tileItems = workouts_needed.map((wo) => {
             return wo.workout_name.length > 1
               ? wo.workout_name.join(" + ")
               : wo.workout_name[0];
           });
-          /* check if cardio is present and if it is, append it to tile_items */
+
+          // check if cardio is present and if it is, append it to tile_items
+          if (day?.cardio?.name) {
+            tileItems.push(`Cardio: ${day.cardio.name}`);
+          }
+
           const tileTitle = selectedProgramDayTitles[indx];
           return (
             <div className="d-flex justify-content-center" key={day.id}>
