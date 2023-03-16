@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
+import { IoArrowBackCircleSharp } from "react-icons/io5";
 
 import { Carousel, WorkoutTile } from "../../../../components";
-import { IoArrowBackCircleSharp } from "react-icons/io5";
 import "./SelectDay.scss";
 
 export const SelectDay = ({
