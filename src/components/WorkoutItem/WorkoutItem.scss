@@ -1,0 +1,23 @@
+.Item {
+    border-radius: 44px;
+    height: 85px;
+    max-height: 85px;
+    min-height: 75px;
+    width: 65vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.complete {
+    background-color: var(--completed-color);
+}
+.incomplete {
+    background-color: var(--base-secondary-color);
+}
+.txtHeight {
+    max-height: 80px;
+    height: auto;
+    overflow-y: scroll;
+}

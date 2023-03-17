@@ -15,7 +15,7 @@ export const Hero = () => {
         muscle growth.
       </p>
       <p className="Hero-subtext">
-        We track workout sessions to generate stats for your progress.
+        We track workout sessions to generate stats of your progress.
       </p>
 
       <div className={isMobile() ? "d-flex flex-column" : "pt-4 text-center"}>

@@ -71,6 +71,7 @@ export const WorkoutPage = ({ programs = data.programs }) => {
             selectedDay={selectedDay}
             next={nextStep}
             prev={prevStep}
+            setSelectedDay={setSelectedDay}
           />
         );
       case 4:

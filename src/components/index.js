@@ -5,3 +5,4 @@ export { KeyFeatures } from "./KeyFeatures/KeyFeatures";
 export { Tile } from "./Tile/Tile";
 export { Carousel } from "./Carousel/Carousel";
 export { WorkoutTile } from "./WorkoutTile/WorkoutTile";
+export { WorkoutItem } from "./WorkoutItem/WorkoutItem";

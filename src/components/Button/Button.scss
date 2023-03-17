@@ -11,6 +11,18 @@
     --bs-btn-active-bg: #{shade-color(var(--primary-yellow), 20%)};
 }
 
+// button + a element disabled css classes
+.btn:disabled{
+    color: var(--primary-yellow);
+    background-color: var(--base-secondary-color);
+    border: white solid 1px;
+}
+.btn.disabled{
+    color: var(--primary-yellow);
+    background-color: var(--base-secondary-color);
+    border: white solid 1px;
+}
+
 .btn-orange-gm {
     --bs-btn-font-weight: 600;
     --bs-btn-color: white;

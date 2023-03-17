@@ -7,6 +7,7 @@ export const CustButton = ({
   onClick,
   color = "orange",
   className,
+  disabled = false,
 }) => {
   return (
     <>
@@ -15,7 +16,9 @@ export const CustButton = ({
           href={link}
           onClick={onClick}
           type="button"
-          className={`btn btn-${color}-gm ` + className}
+          className={
+            `btn btn-${color}-gm ${disabled ? "disabled" : ""} ` + className
+          }
         >
           {text}
         </a>
@@ -23,6 +26,7 @@ export const CustButton = ({
         <button
           onClick={onClick}
           type="button"
+          disabled={disabled}
           className={`btn btn-${color}-gm ` + className}
         >
           {text}
@@ -38,4 +42,5 @@ CustButton.propTypes = {
   onClick: PropTypes.func,
   color: PropTypes.string,
   className: PropTypes.string,
+  disabled: PropTypes.bool,
 };

@@ -22,13 +22,17 @@ export const SelectDay = ({
     setSelectedProgramDayTitles([]);
   };
 
-  const continueToThirdStep = (dayId) => {
+  const continueToThirdStep = (dayId, tileTitle) => {
     var selected = days
       .filter((day) => {
         return day.id === dayId;
       })
       .pop();
 
+    // add tileTitle to selected var so I can easily access it in the 3rd step
+    var colonIndx = tileTitle.indexOf(":");
+    // add 2 to remove the ': ' chars from tileTitle
+    selected.dayTitle = tileTitle.slice(colonIndx + 2);
     setSelectedDay(selected);
     next();
   };
@@ -36,9 +40,9 @@ export const SelectDay = ({
     <div className="d-block pt-5">
       <div
         onClick={() => returnToFirstStep()}
-        className="text-start back-hover"
+        className="text-start back-hover pb-1"
       >
-        <IoArrowBackCircleSharp color="#EBAA28" size={28} />
+        <IoArrowBackCircleSharp color="#EBAA28" size={30} />
       </div>
       <h2 className="fw-bold pb-2"> Select Day </h2>
       <h3 className="fw-bold pb-4 yellow">{program.name}</h3>
@@ -65,7 +69,7 @@ export const SelectDay = ({
               <WorkoutTile
                 title={tileTitle}
                 items={tileItems}
-                onClick={() => continueToThirdStep(day.id)}
+                onClick={() => continueToThirdStep(day.id, tileTitle)}
               />
             </div>
           );
