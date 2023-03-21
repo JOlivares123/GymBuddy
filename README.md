@@ -5,7 +5,7 @@ Created by Jacob
 ## Purpose
 
 - Help users log their working out data
-- Help users rest properly between sets to maximize muscle gains
+- Help users rest properly between sets to maximize muscle growth
 
 ## Designs
 
