@@ -11,11 +11,12 @@ export const Header = () => {
         className="Header-hover d-flex flex-row align-items-center"
       >
         <img
-          className="d-flex Header-logo"
+          className="Header-logo w-100"
           alt="dumbbell logo"
-          src="/logo72.png"
+          src="/logo48.png"
         />
-        <h3 className="ps-2 Header-font">Gym Buddy</h3>
+
+        <h3 className="ps-2 Header-font w-100">Gym Bud</h3>
       </div>
     </header>
   );
