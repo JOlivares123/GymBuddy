@@ -1,8 +1,11 @@
 .Tile {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 30px;
+    justify-content: space-evenly;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-top: 20px;
     border-radius: 14px;
     height: auto;
     min-height: 340px;
