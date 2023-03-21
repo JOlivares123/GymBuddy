@@ -1,9 +1,9 @@
 .Item {
     border-radius: 44px;
-    height: 85px;
-    max-height: 85px;
-    min-height: 75px;
-    width: 65vw;
+    height: 95px;
+    max-height: 95px;
+    min-height: 85px;
+    width: 75vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,7 +17,7 @@
     background-color: var(--base-secondary-color);
 }
 .txtHeight {
-    max-height: 80px;
+    max-height: 60px;
     height: auto;
     overflow-y: scroll;
 }

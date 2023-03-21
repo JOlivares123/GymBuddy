@@ -12,6 +12,7 @@ export const SelectDay = ({
   selectedProgramDayTitles,
   setSelectedProgramDayTitles,
   setSelectedDay,
+  setCompletedWorkouts,
 }) => {
   const { days } = program;
 
@@ -20,6 +21,20 @@ export const SelectDay = ({
     prev();
     setSelectedProgram(null);
     setSelectedProgramDayTitles([]);
+  };
+
+  const addIsDoneAttr = (selectedDay) => {
+    // add new attribute to selectedDay var
+    for (var indx in selectedDay.workouts_needed) {
+      var item = selectedDay.workouts_needed[indx];
+      item.isDone = false;
+    }
+
+    // add isDone attribute to cardio object if present
+    // will always use 0th index for cardio
+    if (selectedDay.cardio?.name) {
+      selectedDay.cardio.isDone = false;
+    }
   };
 
   const continueToThirdStep = (dayId, tileTitle) => {
@@ -33,7 +48,21 @@ export const SelectDay = ({
     var colonIndx = tileTitle.indexOf(":");
     // add 2 to remove the ': ' chars from tileTitle
     selected.dayTitle = tileTitle.slice(colonIndx + 2);
+
+    // update completedWorkouts state var to be an array filled with false
+    var falses = [];
+    for (var i = 0; i < selected.workouts_needed.length; i++) {
+      falses.push(false);
+    }
+    if (selected?.cardio?.name) {
+      falses.push(false);
+    }
+    setCompletedWorkouts(falses);
+
+    // add new attributes and set selectedDay var
+    addIsDoneAttr(selected);
     setSelectedDay(selected);
+
     next();
   };
   return (
@@ -87,4 +116,5 @@ SelectDay.propTypes = {
   selectedProgramDayTitles: PropTypes.arrayOf(PropTypes.string),
   setSelectedProgramDayTitles: PropTypes.func,
   setSelectedDay: PropTypes.func,
+  setCompletedWorkouts: PropTypes.func,
 };

@@ -19,8 +19,8 @@ export const WorkoutPage = ({ programs = data.programs }) => {
   // gets set in 1st step then used(read) in second step.
   const [selectedProgramDayTitles, setSelectedProgramDayTitles] = useState([]);
   const [selectedDay, setSelectedDay] = useState(null);
-  // const [selectedWorkout, setSelectedWorkout] = useState(null);
-  // const [completedWorkouts, setCompletedWorkouts] = useState(null);
+  const [selectedWorkout, setSelectedWorkout] = useState(null);
+  const [completedWorkouts, setCompletedWorkouts] = useState([]);
 
   const selectProgram = (programId) => {
     var selected = programs
@@ -41,6 +41,7 @@ export const WorkoutPage = ({ programs = data.programs }) => {
       setStep(step - 1);
     }
   };
+  console.log(selectedWorkout);
 
   const renderCurrentStep = () => {
     switch (step) {
@@ -63,6 +64,7 @@ export const WorkoutPage = ({ programs = data.programs }) => {
             selectedProgramDayTitles={selectedProgramDayTitles}
             setSelectedProgramDayTitles={setSelectedProgramDayTitles}
             setSelectedDay={setSelectedDay}
+            setCompletedWorkouts={setCompletedWorkouts}
           />
         );
       case 3:
@@ -71,7 +73,11 @@ export const WorkoutPage = ({ programs = data.programs }) => {
             selectedDay={selectedDay}
             next={nextStep}
             prev={prevStep}
+            completedWorkouts={completedWorkouts}
+            setCompletedWorkouts={setCompletedWorkouts}
             setSelectedDay={setSelectedDay}
+            selectedWorkout={selectedWorkout}
+            setSelectedWorkout={setSelectedWorkout}
           />
         );
       case 4:

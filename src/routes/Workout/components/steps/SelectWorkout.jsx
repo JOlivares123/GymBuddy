@@ -1,20 +1,45 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
+
 import { CustButton, WorkoutItem } from "../../../../components";
 
-export const SelectWorkout = ({ selectedDay, next, prev, setSelectedDay }) => {
-  const [isCardioDone, setIsCardioDone] = useState(false);
-  console.log(selectedDay, next, prev), setIsCardioDone;
+export const SelectWorkout = ({
+  selectedDay,
+  next,
+  prev,
+  setSelectedDay,
+  completedWorkouts,
+  setCompletedWorkouts,
+  setSelectedWorkout,
+  selectedWorkout,
+}) => {
+  console.log(setCompletedWorkouts, selectedWorkout);
+
   const returnToSecondStep = () => {
     // add alert first to make sure
     if (confirm("Are you sure you want to abandon your current workout?")) {
-      // update step + selectedDaystate
+      // update step, setSelectedWorkout, setCompletedWorkouts, selectedDay state
       setSelectedDay(null);
+      setSelectedWorkout(null);
+      setCompletedWorkouts([]);
       prev();
     }
   };
-  // add in completed=false to workouts_needed var and use it to set the color of the item
+
+  const continueToFourthStep = (workoutObj) => {
+    next();
+    setSelectedWorkout(workoutObj);
+  };
+
+  const areWorkoutsIncomplete = () => {
+    for (var i = 0; i < completedWorkouts.length; i++) {
+      if (!completedWorkouts[i]) {
+        return true;
+      }
+    }
+    return false;
+  };
+
   return (
     <div className="d-block pt-5">
       <div
@@ -30,15 +55,19 @@ export const SelectWorkout = ({ selectedDay, next, prev, setSelectedDay }) => {
           <WorkoutItem
             key={0}
             itemText={selectedDay.cardio.name}
-            isComplete={isCardioDone}
+            isComplete={selectedDay.cardio.isDone}
+            onClick={() => continueToFourthStep(selectedDay.cardio)}
           />
         )}
         {selectedDay.workouts_needed.map((wo, indx) => {
+          // append workout_name is there is more than one in array
+          var workout_name = wo.workout_name.join(" + ");
           return (
             <WorkoutItem
               key={indx + 1}
-              itemText={wo.workout_name[0]}
-              isComplete={false}
+              itemText={workout_name}
+              isComplete={wo.isDone}
+              onClick={() => continueToFourthStep(wo)}
             />
           );
         })}
@@ -46,7 +75,7 @@ export const SelectWorkout = ({ selectedDay, next, prev, setSelectedDay }) => {
       <br />
       <div className="py-5">
         <CustButton
-          disabled={true}
+          disabled={areWorkoutsIncomplete()}
           link={"/home"}
           className="btn-lg col-8 col-sm-6 col-md-6 col-lg-6 col-xl-6"
           color="yellow"
@@ -62,4 +91,8 @@ SelectWorkout.propTypes = {
   next: PropTypes.func,
   prev: PropTypes.func,
   setSelectedDay: PropTypes.func,
+  completedWorkouts: PropTypes.arrayOf(PropTypes.bool),
+  setCompletedWorkouts: PropTypes.func,
+  setSelectedWorkout: PropTypes.func,
+  selectedWorkout: PropTypes.object,
 };

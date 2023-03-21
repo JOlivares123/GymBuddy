@@ -3,13 +3,14 @@ import { IoChevronForwardCircle } from "react-icons/io5";
 
 import "./WorkoutItem.scss";
 
-export const WorkoutItem = ({ itemText, isComplete }) => {
+export const WorkoutItem = ({ itemText, isComplete, onClick }) => {
   console.log(itemText);
   return (
     <div
       className={`Item back-hover ms-auto me-auto ${
         isComplete ? "complete" : "incomplete"
       }`}
+      onClick={onClick}
     >
       <div className="d-flex w-100 justify-content-evenly align-items-center">
         <h5 className="txtHeight fw-bold text-start col-8">{itemText}</h5>
@@ -22,4 +23,5 @@ export const WorkoutItem = ({ itemText, isComplete }) => {
 WorkoutItem.propTypes = {
   itemText: PropTypes.string,
   isComplete: PropTypes.bool,
+  onClick: PropTypes.func,
 };
