@@ -6,3 +6,4 @@ export { Tile } from "./Tile/Tile";
 export { Carousel } from "./Carousel/Carousel";
 export { WorkoutTile } from "./WorkoutTile/WorkoutTile";
 export { WorkoutItem } from "./WorkoutItem/WorkoutItem";
+export { GoalDisplay } from "./GoalDisplay/GoalDisplay";

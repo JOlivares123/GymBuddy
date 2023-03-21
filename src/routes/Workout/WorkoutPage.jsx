@@ -12,15 +12,20 @@ import {
 import { data } from "./data";
 
 export const WorkoutPage = ({ programs = data.programs }) => {
+  // TODO: create state var that will hold log info to post to DB
+  // const [logData, setLogData] = useState(null);
   const [step, setStep] = useState(1);
   // used to keep track how many sets have been performed throughout workout
   // const [numSets, setNumSets] = useState(0);
   const [selectedProgram, setSelectedProgram] = useState(null);
+  const [restTime, setRestTime] = useState(0);
   // gets set in 1st step then used(read) in second step.
   const [selectedProgramDayTitles, setSelectedProgramDayTitles] = useState([]);
   const [selectedDay, setSelectedDay] = useState(null);
   const [selectedWorkout, setSelectedWorkout] = useState(null);
+  const [currentWorkoutSets, setCurrentWorkoutSets] = useState(0);
   const [completedWorkouts, setCompletedWorkouts] = useState([]);
+  const [isCardio, setIsCardio] = useState(false);
 
   const selectProgram = (programId) => {
     var selected = programs
@@ -28,7 +33,9 @@ export const WorkoutPage = ({ programs = data.programs }) => {
         return program.id === programId;
       })
       .pop();
-
+    // extract restTime from selectedProgram + convert rest_duration from
+    // ms to seconds
+    setRestTime(selected.rest_duration / 1000);
     setSelectedProgram(selected);
   };
 
@@ -41,7 +48,6 @@ export const WorkoutPage = ({ programs = data.programs }) => {
       setStep(step - 1);
     }
   };
-  console.log(selectedWorkout);
 
   const renderCurrentStep = () => {
     switch (step) {
@@ -78,10 +84,25 @@ export const WorkoutPage = ({ programs = data.programs }) => {
             setSelectedDay={setSelectedDay}
             selectedWorkout={selectedWorkout}
             setSelectedWorkout={setSelectedWorkout}
+            setIsCardio={setIsCardio}
           />
         );
       case 4:
-        return <Rest next={nextStep} prev={prevStep} step={step} />;
+        return (
+          <Rest
+            next={nextStep}
+            prev={prevStep}
+            selectedWorkout={selectedWorkout}
+            setSelectedWorkout={setSelectedWorkout}
+            completedWorkouts={completedWorkouts}
+            setCompletedWorkouts={setCompletedWorkouts}
+            currentWorkoutSets={currentWorkoutSets}
+            setCurrentWorkoutSets={setCurrentWorkoutSets}
+            isCardio={isCardio}
+            setIsCardio={setIsCardio}
+            restTime={restTime}
+          />
+        );
       case 5:
         return <PerformWorkout next={nextStep} prev={prevStep} step={step} />;
       default:
