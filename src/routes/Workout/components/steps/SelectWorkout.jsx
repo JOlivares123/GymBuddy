@@ -19,7 +19,7 @@ export const SelectWorkout = ({ selectedDay, next, prev, setSelectedDay }) => {
     <div className="d-block pt-5">
       <div
         onClick={() => returnToSecondStep()}
-        className="text-start back-hover pb-1"
+        className="text-start back-hover back-width pb-1"
       >
         <IoArrowBackCircleSharp color="#EBAA28" size={30} />
       </div>

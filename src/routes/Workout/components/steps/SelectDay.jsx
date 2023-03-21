@@ -40,7 +40,7 @@ export const SelectDay = ({
     <div className="d-block pt-5">
       <div
         onClick={() => returnToFirstStep()}
-        className="text-start back-hover pb-1"
+        className="text-start back-hover back-width pb-1"
       >
         <IoArrowBackCircleSharp color="#EBAA28" size={30} />
       </div>

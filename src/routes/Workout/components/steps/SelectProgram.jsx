@@ -25,7 +25,10 @@ export const SelectProgram = ({
 
   return (
     <div className="d-block pt-5">
-      <div onClick={() => returnHome()} className="text-start back-hover pb-1">
+      <div
+        onClick={() => returnHome()}
+        className="text-start back-hover back-width pb-1"
+      >
         <IoArrowBackCircleSharp color="#EBAA28" size={30} />
       </div>
       <h2 className="fw-bold pb-4">Select Workout Program</h2>
