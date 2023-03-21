@@ -6,7 +6,12 @@ import "./WorkoutTile.scss";
 
 export const WorkoutTile = ({ title, items, showEdit = false, onClick }) => {
   return (
-    <div className={`Tile TileAboveMobile TileMobile d-flex`}>
+    <div
+      className={
+        (showEdit ? "TileWEdit" : "TileWOEdit") +
+        ` Tile TileAboveMobile TileMobile d-flex`
+      }
+    >
       {showEdit && (
         <div className="ms-auto back-hover">
           <FiEdit size={20} />

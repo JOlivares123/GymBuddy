@@ -5,12 +5,19 @@
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 30px;
-    padding-top: 20px;
     border-radius: 14px;
     height: auto;
     min-height: 340px;
     background-color: var(--base-secondary-color);
     flex-shrink: 1;
+}
+
+.TileWOEdit {
+    padding-top: 30px;
+}
+
+.TileWEdit {
+    padding-top:20px;
 }
 
 @media screen and (max-width: 767px){
