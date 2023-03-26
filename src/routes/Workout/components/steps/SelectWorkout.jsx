@@ -30,7 +30,6 @@ export const SelectWorkout = ({
   };
 
   const continueToFourthStep = (workoutObj, index, isCardio) => {
-    next();
     // update state to denote cardio mode
     if (isCardio) {
       setIsCardio(true);
@@ -38,6 +37,7 @@ export const SelectWorkout = ({
     // add index attribute to workoutObj
     workoutObj.index = index;
     setSelectedWorkout(workoutObj);
+    next();
   };
 
   const areWorkoutsIncomplete = () => {

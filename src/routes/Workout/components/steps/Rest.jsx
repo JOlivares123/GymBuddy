@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
-import { GoalDisplay } from "../../../../components";
+import { CustButton, GoalDisplay } from "../../../../components";
 
 export const Rest = ({
   next,
@@ -58,6 +58,16 @@ export const Rest = ({
     returnToThirdStep();
   };
 
+  const canExit = () => {
+    if (isCardio) {
+      return true;
+    }
+    if (currentWorkoutSets === selectedWorkout.goal[0].sets) {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <div className="d-block pt-5">
       {currentWorkoutSets == 0 && (
@@ -68,17 +78,33 @@ export const Rest = ({
           <IoArrowBackCircleSharp color="#EBAA28" size={30} />
         </div>
       )}
-      <h2 onClick={() => completeWorkout()} className="fw-bold pb-2">
+      <h2 className="fw-bold pb-2 pt-3">
         {isCardio ? selectedWorkout.name : selectedWorkout.completeWorkoutName}
       </h2>
-      <div>
-        {isCardio ? (
-          <GoalDisplay goal={{ duration: 10 }} isCardio={isCardio} />
-        ) : (
-          selectedWorkout.goal.map((goal, indx) => {
-            return <GoalDisplay key={indx} goal={goal} isCardio={isCardio} />;
-          })
-        )}
+      {isCardio ? (
+        <GoalDisplay goal={{ duration: 10 }} isCardio={isCardio} />
+      ) : (
+        selectedWorkout.goal.map((goal, indx) => {
+          return <GoalDisplay key={indx} goal={goal} isCardio={isCardio} />;
+        })
+      )}
+      <div className="pt-5">
+        <h4>Completed Sets:</h4>
+        <h2 className="yellow">{currentWorkoutSets}</h2>
+        <CustButton
+          text="Start Set"
+          color="yellow"
+          className="btn-lg mt-3 w-50"
+        />
+      </div>
+      <div className="mt-5">
+        <CustButton
+          text="DONE"
+          onClick={() => completeWorkout()}
+          color="yellow"
+          className="mt-5 btn-lg w-75 py-2"
+          disabled={!canExit()}
+        />
       </div>
     </div>
   );
