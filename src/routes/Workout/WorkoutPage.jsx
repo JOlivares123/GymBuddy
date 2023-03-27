@@ -34,8 +34,8 @@ export const WorkoutPage = ({ programs = data.programs }) => {
       })
       .pop();
     // extract restTime from selectedProgram + convert rest_duration from
-    // ms to seconds
-    setRestTime(selected.rest_duration / 1000);
+    // rest time in seconds
+    setRestTime(selected.rest_duration);
     setSelectedProgram(selected);
   };
 
@@ -88,6 +88,7 @@ export const WorkoutPage = ({ programs = data.programs }) => {
           />
         );
       case 4:
+        console.log(selectedDay);
         return (
           <Rest
             next={nextStep}

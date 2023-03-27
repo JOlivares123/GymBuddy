@@ -62,7 +62,7 @@ export const Rest = ({
     if (isCardio) {
       return true;
     }
-    if (currentWorkoutSets === selectedWorkout.goal[0].sets) {
+    if (currentWorkoutSets === selectedWorkout.goal.sets) {
       return true;
     }
     return false;
@@ -82,11 +82,9 @@ export const Rest = ({
         {isCardio ? selectedWorkout.name : selectedWorkout.completeWorkoutName}
       </h2>
       {isCardio ? (
-        <GoalDisplay goal={{ duration: 10 }} isCardio={isCardio} />
+        <GoalDisplay goal={selectedWorkout} isCardio={isCardio} />
       ) : (
-        selectedWorkout.goal.map((goal, indx) => {
-          return <GoalDisplay key={indx} goal={goal} isCardio={isCardio} />;
-        })
+        <GoalDisplay goal={selectedWorkout.goal} isCardio={isCardio} />
       )}
       <div className="pt-5">
         <h4>Completed Sets:</h4>

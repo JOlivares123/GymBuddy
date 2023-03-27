@@ -23,6 +23,7 @@ export const SelectDay = ({
     setSelectedProgramDayTitles([]);
   };
 
+  //  TODO: Review if this is needed
   const addIsDoneAttr = (selectedDay) => {
     // add new attribute to selectedDay var
     for (var indx in selectedDay.workouts_needed) {
@@ -61,6 +62,8 @@ export const SelectDay = ({
 
     // add new attributes and set selectedDay var
     addIsDoneAttr(selected);
+
+    // save selectedDay
     setSelectedDay(selected);
 
     next();
@@ -80,16 +83,15 @@ export const SelectDay = ({
         {days.map((day, indx) => {
           const { workouts_needed } = day;
 
-          // join workouts_needed into a string instead of array
+          // extract titles
           const tileItems = workouts_needed.map((wo) => {
-            return wo.workout_name.length > 1
-              ? wo.workout_name.join(" + ")
-              : wo.workout_name[0];
+            return wo.workout_name;
           });
 
-          // check if cardio is present and if it is, append it to tile_items
+          // check if cardio is present and if it is, append it to
+          // tile_items @ index 0
           if (day?.cardio?.name) {
-            tileItems.push(`Cardio: ${day.cardio.name}`);
+            tileItems.unshift(`Cardio: ${day.cardio.name}`);
           }
 
           const tileTitle = selectedProgramDayTitles[indx];

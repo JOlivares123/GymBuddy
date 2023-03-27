@@ -3,14 +3,19 @@ import PropTypes from "prop-types";
 import "./GoalDisplay.scss";
 
 export const GoalDisplay = ({ isCardio, goal }) => {
-  console.log(goal);
+  const convertSecsToMins = () => {
+    if (isCardio) {
+      // limit the number of decimal pts shown if any
+      return parseFloat((goal.duration / 60).toFixed(2));
+    }
+  };
   return (
     <div className="pt-5">
       <div className="GoalContainer">
         {isCardio ? (
           <>
             <h5 className="CardioTitle">Duration</h5>
-            <h2 className="CardioTime yellow">{goal.duration}</h2>
+            <h2 className="CardioTime yellow">{convertSecsToMins()} mins</h2>
           </>
         ) : (
           <>

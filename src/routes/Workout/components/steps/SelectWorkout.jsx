@@ -71,8 +71,7 @@ export const SelectWorkout = ({
           />
         )}
         {selectedDay.workouts_needed.map((wo, indx) => {
-          // append workout_name is there is more than one in array
-          var workout_name = wo.workout_name.join(" + ");
+          var workout_name = wo.workout_name;
           // append concatted workoutNames to object for next step
           wo.completeWorkoutName = workout_name;
           var workoutIndx = selectedDay?.cardio?.name ? indx + 1 : indx;
