@@ -58,6 +58,13 @@ export const Rest = ({
     returnToThirdStep();
   };
 
+  const startSet = () => {
+    // update currentWorkoutSets
+    setCurrentWorkoutSets(currentWorkoutSets++);
+    // move user to next step - PerformWorkout
+    next();
+  };
+
   const canExit = () => {
     if (isCardio) {
       return true;
@@ -93,6 +100,7 @@ export const Rest = ({
           text="Start Set"
           color="yellow"
           className="btn-lg mt-3 w-50"
+          onClick={() => startSet()}
         />
       </div>
       <div className="mt-5">

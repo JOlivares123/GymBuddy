@@ -88,7 +88,6 @@ export const WorkoutPage = ({ programs = data.programs }) => {
           />
         );
       case 4:
-        console.log(selectedDay);
         return (
           <Rest
             next={nextStep}
