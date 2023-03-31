@@ -7,6 +7,7 @@ import {
   SelectDay,
   SelectProgram,
   SelectWorkout,
+  TimerMode,
 } from "./components";
 // mock data until backend is built
 import { data } from "./data";
@@ -43,9 +44,10 @@ export const WorkoutPage = ({ programs = data.programs }) => {
     setStep(step + 1);
   };
 
-  const prevStep = () => {
-    if (step > 1) {
-      setStep(step - 1);
+  const prevStep = (stepsBack = 1) => {
+    // ensures we stay in bounds of our switch case
+    if (step - stepsBack >= 1) {
+      setStep(step - stepsBack);
     }
   };
 
@@ -104,7 +106,19 @@ export const WorkoutPage = ({ programs = data.programs }) => {
           />
         );
       case 5:
-        return <PerformWorkout next={nextStep} prev={prevStep} step={step} />;
+        return (
+          <PerformWorkout
+            next={nextStep}
+            prev={prevStep}
+            step={step}
+            goal={isCardio ? selectedWorkout : selectedWorkout.goal}
+            currentWorkoutSets={currentWorkoutSets}
+            setCurrentWorkoutSets={setCurrentWorkoutSets}
+            isCardio={isCardio}
+          />
+        );
+      case 6:
+        return <TimerMode prev={prevStep} />;
       default:
     }
   };

@@ -18,7 +18,6 @@
     padding: 44px;
     border-radius: 14px;
     height: auto;
-    min-height: 302px;
     background-color: var(--base-secondary-color);
     flex-shrink: 1;
 }
@@ -26,12 +25,14 @@
 @media screen and (max-width: 767px){
     .TileMobile {
         margin-bottom: 20px;
-        max-width: 355px;
-        width: 355px;
+        max-width: 335px;
+        width: 335px;
+        min-height: 315px;
     }
 }
 @media screen and (min-width: 768px){
     .TileAboveMobile {
         margin-right: 20px;
+        min-height: 325px;
     }
 }

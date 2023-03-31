@@ -1,4 +1,4 @@
-.Tile {
+.WorkoutTile {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -21,7 +21,7 @@
 }
 
 @media screen and (max-width: 767px){
-    .TileMobile {
+    .WorkoutTileMobile {
         max-width: 355px;
         width: 355px;
     }

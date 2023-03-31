@@ -13,15 +13,7 @@ export const Rest = ({
   setCurrentWorkoutSets,
   isCardio,
   setIsCardio,
-  restTime,
 }) => {
-  console.log(
-    selectedWorkout,
-    completedWorkouts,
-    currentWorkoutSets,
-    isCardio,
-    restTime
-  );
   const returnToThirdStep = () => {
     console.log(
       next,
@@ -60,7 +52,7 @@ export const Rest = ({
 
   const startSet = () => {
     // update currentWorkoutSets
-    setCurrentWorkoutSets(currentWorkoutSets++);
+    setCurrentWorkoutSets(currentWorkoutSets + 1);
     // move user to next step - PerformWorkout
     next();
   };
@@ -88,11 +80,10 @@ export const Rest = ({
       <h2 className="fw-bold pb-2 pt-3">
         {isCardio ? selectedWorkout.name : selectedWorkout.completeWorkoutName}
       </h2>
-      {isCardio ? (
-        <GoalDisplay goal={selectedWorkout} isCardio={isCardio} />
-      ) : (
-        <GoalDisplay goal={selectedWorkout.goal} isCardio={isCardio} />
-      )}
+      <GoalDisplay
+        goal={isCardio ? selectedWorkout : selectedWorkout.goal}
+        isCardio={isCardio}
+      />
       <div className="pt-5">
         <h4>Completed Sets:</h4>
         <h2 className="yellow">{currentWorkoutSets}</h2>
@@ -127,5 +118,4 @@ Rest.propTypes = {
   setCurrentWorkoutSets: PropTypes.func,
   isCardio: PropTypes.bool,
   setIsCardio: PropTypes.func,
-  restTime: PropTypes.number,
 };
