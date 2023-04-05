@@ -22,7 +22,7 @@ export const GoalDisplay = ({ isCardio, goal }) => {
             <h5 className="RepsTitle">Reps</h5>
             <h5 className="SetsTitle">Sets</h5>
             <h5 className="WeightTitle">Weight</h5>
-            <h2 className="RepsCol yellow">{`${goal.min_reps}-${goal.max_reps}`}</h2>
+            <h2 className="RepsCol yellow">{`${goal.min_reps} - ${goal.max_reps}`}</h2>
             <h2 className="SetsCol yellow">{goal.sets}</h2>
             <h2 className="WeightCol yellow">{goal.weight} lbs</h2>
           </>

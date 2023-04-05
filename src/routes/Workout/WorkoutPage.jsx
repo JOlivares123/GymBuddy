@@ -115,6 +115,7 @@ export const WorkoutPage = ({ programs = data.programs }) => {
             currentWorkoutSets={currentWorkoutSets}
             setCurrentWorkoutSets={setCurrentWorkoutSets}
             isCardio={isCardio}
+            setIsCardio={setIsCardio}
           />
         );
       case 6:

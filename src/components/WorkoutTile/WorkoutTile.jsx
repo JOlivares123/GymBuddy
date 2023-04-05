@@ -9,7 +9,7 @@ export const WorkoutTile = ({ title, items, showEdit = false, onClick }) => {
     <div
       className={
         (showEdit ? "TileWEdit" : "TileWOEdit") +
-        ` WorkoutTile WorkoutTileMobile d-flex me-3`
+        ` WorkoutTile WorkoutTileMobile d-flex WorkoutTileMargin`
       }
     >
       {showEdit && (

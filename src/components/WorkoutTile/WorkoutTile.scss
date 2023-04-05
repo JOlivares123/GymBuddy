@@ -22,8 +22,13 @@
 
 @media screen and (max-width: 767px){
     .WorkoutTileMobile {
-        max-width: 355px;
-        width: 355px;
+        max-width: 350px;
+        width: 350px;
+    }
+}
+@media screen and (min-width: 768px){
+    .WorkoutTileMargin {
+        margin-right: 15px;
     }
 }
 
