@@ -116,10 +116,12 @@ export const WorkoutPage = ({ programs = data.programs }) => {
             setCurrentWorkoutSets={setCurrentWorkoutSets}
             isCardio={isCardio}
             setIsCardio={setIsCardio}
+            completedWorkouts={completedWorkouts}
+            setCompletedWorkouts={setCompletedWorkouts}
           />
         );
       case 6:
-        return <TimerMode prev={prevStep} />;
+        return <TimerMode prev={prevStep} restTimeSecs={restTime} />;
       default:
     }
   };
