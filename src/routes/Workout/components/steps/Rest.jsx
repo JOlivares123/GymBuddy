@@ -57,11 +57,22 @@ export const Rest = ({
     next();
   };
 
+  // use this to disable the 'DONE' button once we reach our goal
   const canExit = () => {
     if (isCardio) {
       return true;
     }
-    if (currentWorkoutSets === selectedWorkout.goal.sets) {
+    if (currentWorkoutSets >= selectedWorkout.goal.sets) {
+      return true;
+    }
+    return false;
+  };
+
+  // use this to disable the 'Start Set' button once we reach our goal
+  const disableStartSetButton = () => {
+    if (isCardio) {
+      return false;
+    } else if (currentWorkoutSets >= selectedWorkout.goal.sets) {
       return true;
     }
     return false;
@@ -92,6 +103,7 @@ export const Rest = ({
           color="yellow"
           className="btn-lg mt-3 w-50"
           onClick={() => startSet()}
+          disabled={disableStartSetButton()}
         />
       </div>
       <div className="mt-5">

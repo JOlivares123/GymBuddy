@@ -3,7 +3,6 @@ import { useState } from "react";
 
 import { CustButton } from "../../../../components";
 
-const CARDIO_INDEX = 0;
 export const PerformWorkout = ({
   next,
   prev,
@@ -12,8 +11,6 @@ export const PerformWorkout = ({
   currentWorkoutSets,
   setCurrentWorkoutSets,
   isCardio,
-  setIsCardio,
-  completedWorkouts,
   setCompletedWorkouts,
 }) => {
   console.log(
@@ -38,29 +35,14 @@ export const PerformWorkout = ({
     return currentWorkoutSets >= goal.sets;
   };
 
-  // if isCardio is true, then we send the user to the SelectWorkout page
+  // if isCardio is true, then we send the user to the Rest page to complete their workout
   // if not, then we send the user to the TimerMode page
   const goToNextStep = () => {
-    // send user to SelectWorkout page if they finish cardio OR if they complete the goal for their workout
-    if (isCardio) {
-      // need to update isCardio state
-      setIsCardio(false);
-      // need to make cardio finished after in completedWorkouts
-      const updatedCompletedWorkouts = completedWorkouts.map((val, indx) => {
-        if (indx === CARDIO_INDEX) {
-          return true;
-        }
-        return val;
-      });
-      setCompletedWorkouts(updatedCompletedWorkouts);
-
-      // need to update currentWorkoutSets
-      setCurrentWorkoutSets(0);
-
-      prev(2);
-    } else if (!isCardio && isGoalComplete()) {
-      // send user to SelectWorkout step
-      prev(2);
+    // send user to Rest page if they finish cardio OR if they complete the goal for their workout
+    // they can continue to do extra sets if needed
+    if (isCardio || (!isCardio && isGoalComplete())) {
+      // send user to Rest step as workout states get updated properly
+      prev();
     }
     // we are not done with the current workout and it's not cardio
     else {
@@ -102,7 +84,5 @@ PerformWorkout.propTypes = {
   currentWorkoutSets: PropTypes.number,
   setCurrentWorkoutSets: PropTypes.func,
   isCardio: PropTypes.bool,
-  setIsCardio: PropTypes.func,
-  completedWorkouts: PropTypes.array,
   setCompletedWorkouts: PropTypes.func,
 };

@@ -4,11 +4,10 @@ import { IoChevronForwardCircle } from "react-icons/io5";
 import "./WorkoutItem.scss";
 
 export const WorkoutItem = ({ itemText, isComplete, onClick }) => {
-  console.log(itemText);
   return (
     <div
-      className={`Item back-hover ms-auto me-auto ${
-        isComplete ? "complete" : "incomplete"
+      className={`Item ms-auto me-auto ${
+        isComplete ? "complete" : "incomplete back-hover"
       }`}
       onClick={onClick}
     >

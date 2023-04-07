@@ -13,11 +13,8 @@ export const SelectWorkout = ({
   completedWorkouts,
   setCompletedWorkouts,
   setSelectedWorkout,
-  selectedWorkout,
   setIsCardio,
 }) => {
-  console.log(setCompletedWorkouts, selectedWorkout);
-
   const returnToSecondStep = () => {
     // add alert first to make sure
     if (confirm("Are you sure you want to abandon your current workout?")) {
@@ -49,6 +46,8 @@ export const SelectWorkout = ({
     return false;
   };
 
+  // once an workout is completed, I should disable the onClick for that WorkoutItem
+  // to avoid the error
   return (
     <div className="d-block pt-5">
       <div
@@ -65,9 +64,10 @@ export const SelectWorkout = ({
             key={CARDIO_INDEX}
             itemText={selectedDay.cardio.name}
             isComplete={completedWorkouts[CARDIO_INDEX]}
-            onClick={() =>
-              continueToFourthStep(selectedDay.cardio, CARDIO_INDEX, true)
-            }
+            onClick={() => {
+              !completedWorkouts[CARDIO_INDEX] &&
+                continueToFourthStep(selectedDay.cardio, CARDIO_INDEX, true);
+            }}
           />
         )}
         {selectedDay.workouts_needed.map((wo, indx) => {
@@ -80,7 +80,10 @@ export const SelectWorkout = ({
               key={workoutIndx}
               itemText={workout_name}
               isComplete={completedWorkouts[workoutIndx]}
-              onClick={() => continueToFourthStep(wo, workoutIndx, false)}
+              onClick={() => {
+                !completedWorkouts[workoutIndx] &&
+                  continueToFourthStep(wo, workoutIndx, false);
+              }}
             />
           );
         })}
@@ -107,6 +110,5 @@ SelectWorkout.propTypes = {
   completedWorkouts: PropTypes.arrayOf(PropTypes.bool),
   setCompletedWorkouts: PropTypes.func,
   setSelectedWorkout: PropTypes.func,
-  selectedWorkout: PropTypes.object,
   setIsCardio: PropTypes.func,
 };
