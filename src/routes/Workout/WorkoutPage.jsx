@@ -8,7 +8,7 @@ import {
   SelectProgram,
   SelectWorkout,
   TimerMode,
-} from "./components";
+} from "./steps";
 // mock data until backend is built
 import { data } from "./data";
 
