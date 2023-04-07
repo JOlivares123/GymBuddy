@@ -16,14 +16,13 @@ const renderTime = ({ remainingTime }) => {
 };
 
 export const TimerMode = ({ prev, restTimeSecs }) => {
-  console.log(prev, restTimeSecs);
   // use prev(2) to navigate back to Rest.jsx
   return (
     <div>
       <CountdownCircleTimer
         isPlaying={true}
         colors="#EBAA28"
-        duration={3}
+        duration={restTimeSecs}
         onComplete={() => prev(2)}
       >
         {renderTime}
