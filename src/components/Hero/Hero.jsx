@@ -11,8 +11,8 @@ export const Hero = () => {
         sessions.
       </p>
       <p className="Hero-subtext">
-        Gym Buddy helps track resting periods between workouts to maximize
-        muscle growth.
+        Gym Buddy helps track resting periods between sets to maximize muscle
+        growth.
       </p>
       <p className="Hero-subtext">
         We track workout sessions to generate stats of your progress.
