@@ -9,16 +9,16 @@ export const data = {
         {
           id: 112,
           cardio: {
-            name: "running",
-            // 15 mins in secs
-            duration: 950,
+            name: "incline treadmill",
+            // 10 mins in secs
+            duration: 600,
             notes: null,
           },
           workouts_needed: [
             {
-              workout_name: "Incline Bench Press",
+              workout_name: "Incline Bench Press Machine",
               goal: {
-                weight: 120,
+                weight: 130,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
@@ -27,7 +27,7 @@ export const data = {
               muscles_worked: ["Chest"],
             },
             {
-              workout_name: "Neutral Bench Press",
+              workout_name: "Neutral Bench Press Machine",
               goal: {
                 weight: 160,
                 sets: 3,
@@ -40,7 +40,7 @@ export const data = {
             {
               workout_name: "Cable Upper Back Pulldown",
               goal: {
-                weight: 140,
+                weight: 143,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
@@ -49,7 +49,7 @@ export const data = {
               muscles_worked: ["Upper Back"],
             },
             {
-              workout_name: "Lat Row",
+              workout_name: "Cable Lat Pulldown",
               goal: {
                 weight: 142,
                 sets: 3,
@@ -68,6 +68,17 @@ export const data = {
                 max_reps: 8,
               },
               notes: null,
+              muscles_worked: ["Shoulder"],
+            },
+            {
+              workout_name: "side shoulder raise",
+              goal: {
+                weight: 20,
+                sets: 2,
+                min_reps: 6,
+                max_reps: 9,
+              },
+              notes: "pus1111234hfjfjf",
               muscles_worked: ["Shoulder"],
             },
           ],
@@ -138,9 +149,9 @@ export const data = {
               muscles_worked: ["Bicep"],
             },
             {
-              workout_name: "rear delt cable fly",
+              workout_name: "bent over rear delt cable fly",
               goal: {
-                weight: 27.5,
+                weight: 20,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 9,
@@ -153,12 +164,18 @@ export const data = {
         // legs
         {
           id: 114,
+          cardio: {
+            name: "incline treadmill",
+            // 10 mins in secs
+            duration: 600,
+            notes: "pushfjfjf",
+          },
           workouts_needed: [
             {
               workout_name: "dumbbell RDL",
               goal: {
                 weight: 180,
-                sets: 3,
+                sets: 2,
                 min_reps: 6,
                 max_reps: 8,
               },
@@ -168,7 +185,7 @@ export const data = {
             {
               workout_name: "Hack Squat",
               goal: {
-                weight: 210,
+                weight: 230,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 9,
@@ -199,15 +216,26 @@ export const data = {
               muscles_worked: ["Hamstrings"],
             },
             {
-              workout_name: "side shoulder raise",
+              workout_name: "Hip Abductor machine",
               goal: {
-                weight: 27.5,
+                weight: 110,
                 sets: 2,
                 min_reps: 6,
-                max_reps: 9,
+                max_reps: 8,
               },
-              notes: "pus1111234hfjfjf",
-              muscles_worked: ["Shoulder"],
+              notes: "pushfjfj1111f",
+              muscles_worked: ["Abductors"],
+            },
+            {
+              workout_name: "Calf Press",
+              goal: {
+                weight: 210,
+                sets: 2,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes: "pushfjfj1111f",
+              muscles_worked: ["Calves"],
             },
           ],
         },
