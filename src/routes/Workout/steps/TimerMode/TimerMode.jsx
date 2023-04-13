@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
+import { useEffect } from "react";
 
 import "./TimerMode.scss";
 
@@ -16,6 +17,9 @@ const renderTime = ({ remainingTime }) => {
 };
 
 export const TimerMode = ({ prev, restTimeSecs }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   // use prev(2) to navigate back to Rest.jsx
   return (
     <>

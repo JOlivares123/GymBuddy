@@ -5,7 +5,7 @@ import "./Hero.scss";
 export const Hero = () => {
   return (
     <div className="Hero">
-      <h1 className="Hero-main-text"> Need a Work Out Buddy ?</h1>
+      <h1 className="Hero-main-text"> Need a Gym Buddy ?</h1>
       <p className="pt-2 Hero-subtext">
         Welcome! Gym Buddy was created in order to help track your workout
         sessions.
