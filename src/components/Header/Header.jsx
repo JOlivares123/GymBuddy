@@ -16,7 +16,7 @@ export const Header = () => {
           src="/logo48.png"
         />
 
-        <h3 className="ps-2 Header-font w-100">Gym Bud</h3>
+        <h3 className="ps-2 Header-font w-100">Gym Buddy</h3>
       </div>
     </header>
   );
