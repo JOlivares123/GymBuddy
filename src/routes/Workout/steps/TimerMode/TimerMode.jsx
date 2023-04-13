@@ -33,7 +33,7 @@ export const TimerMode = ({ prev, restTimeSecs }) => {
             restTimeSecs / 4,
             0,
           ]}
-          duration={restTimeSecs}
+          duration={4}
           onComplete={() => prev(2)}
         >
           {renderTime}

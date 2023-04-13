@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
+import { useNavigate } from "react-router";
 
 import { CustButton, WorkoutItem } from "../../../../components";
+import { confettiEffect } from "./Confetti";
 
 const CARDIO_INDEX = 0;
 
@@ -15,6 +17,8 @@ export const SelectWorkout = ({
   setSelectedWorkout,
   setIsCardio,
 }) => {
+  const navigate = useNavigate();
+
   const returnToSecondStep = () => {
     // add alert first to make sure
     if (confirm("Are you sure you want to abandon your current workout?")) {
@@ -92,7 +96,14 @@ export const SelectWorkout = ({
       <div className="py-5">
         <CustButton
           disabled={areWorkoutsIncomplete()}
-          link={"/home"}
+          onClick={() => {
+            confettiEffect();
+            setTimeout(() => {
+              // introduce a timeout in order for the confetti effect
+              // to happen + congratulate the user
+              navigate("/home");
+            }, [3000]);
+          }}
           className="btn-lg col-8 col-sm-6 col-md-6 col-lg-6 col-xl-6"
           color="yellow"
           text="COMPLETE SESSION"
