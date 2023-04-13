@@ -21,6 +21,6 @@
         "buttonColor": "orange",
         "title": "Profile",
         "desc": "Go to profile to change your picture, check milestones, sign out and more.",
-        "link": "/stats"
+        "link": "/profile"
     }
 ]
