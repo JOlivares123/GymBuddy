@@ -21,7 +21,7 @@ export const Hero = () => {
       <div className={isMobile() ? "d-flex flex-column" : "pt-4 text-center"}>
         <CustButton
           link="/signup"
-          className={`btn-lg ${isMobile() ? "mb-2" : "me-3"}`}
+          className={`btn-lg ${isMobile() ? "mb-4" : "me-3"}`}
           text="Sign Up"
           color="yellow"
         />
