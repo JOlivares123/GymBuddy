@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import "./Carousel.scss";
+
 export const Carousel = ({ children }) => {
   const settings = {
     infinite: false,
@@ -32,7 +34,6 @@ export const Carousel = ({ children }) => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots: true,
         },
       },
     ],

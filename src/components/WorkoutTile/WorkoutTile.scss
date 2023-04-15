@@ -6,8 +6,8 @@
     padding-right: 30px;
     padding-bottom: 30px;
     border-radius: 14px;
-    height: auto;
-    min-height: 340px;
+    height: 330px;
+    width: 325px;
     background-color: var(--base-secondary-color);
     flex-shrink: 1;
 }
@@ -20,12 +20,6 @@
     padding-top:13px;
 }
 
-@media screen and (max-width: 767px){
-    .WorkoutTileMobile {
-        max-width: 350px;
-        width: 350px;
-    }
-}
 @media screen and (min-width: 768px){
     .WorkoutTileMargin {
         margin-right: 15px;
@@ -35,6 +29,7 @@
 .Items {
     max-height: 150px;
     height: auto;
+    max-width: 300px;
     overflow-y: scroll;
 }
 

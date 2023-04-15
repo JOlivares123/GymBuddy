@@ -17,7 +17,7 @@ export const WorkoutTile = ({ title, items, showEdit = false, onClick }) => {
           <FiEdit size={20} />
         </div>
       )}
-      <h3 className="fw-bold">{title}</h3>
+      <h3 className="fw-bold mb-2">{title}</h3>
 
       <div className="text-start Items">
         {items.map((item, indx) => {
