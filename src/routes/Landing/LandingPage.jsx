@@ -7,7 +7,11 @@ export const LandingPage = () => {
       <Hero />
       <br />
       {/* temp button to test out func on mobile */}
-      <CustButton link={"/home"} text={"Go Home"} />
+      <CustButton
+        link={"/home"}
+        className="btn-lg"
+        text={"Temp: Check out logged in experience"}
+      />
       <KeyFeatures />
     </>
   );
