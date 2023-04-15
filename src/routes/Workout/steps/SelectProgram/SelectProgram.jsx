@@ -1,8 +1,12 @@
 import PropTypes from "prop-types";
-import { IoArrowBackCircleSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 
-import { Carousel, CustButton, WorkoutTile } from "./../../../../components";
+import {
+  BackArrow,
+  Carousel,
+  CustButton,
+  WorkoutTile,
+} from "./../../../../components";
 
 export const SelectProgram = ({
   myPrograms,
@@ -25,12 +29,7 @@ export const SelectProgram = ({
 
   return (
     <div className="d-block pt-5">
-      <div
-        onClick={() => returnHome()}
-        className="text-start back-hover back-width pb-1"
-      >
-        <IoArrowBackCircleSharp color="#EBAA28" size={30} />
-      </div>
+      <BackArrow onClick={() => returnHome()} />
       <h2 className="fw-bold pb-4">Select Workout Program</h2>
       <br />
       <Carousel>

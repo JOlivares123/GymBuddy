@@ -6,7 +6,7 @@
     padding-right: 30px;
     padding-bottom: 30px;
     border-radius: 14px;
-    height: 330px;
+    height: 340px;
     width: 325px;
     background-color: var(--base-secondary-color);
     flex-shrink: 1;
@@ -31,6 +31,7 @@
     height: auto;
     max-width: 300px;
     overflow-y: scroll;
+    margin-bottom: 5px;
 }
 
 /* always show scrollbars */

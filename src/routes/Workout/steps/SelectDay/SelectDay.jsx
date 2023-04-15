@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
-import { IoArrowBackCircleSharp } from "react-icons/io5";
 
-import { Carousel, WorkoutTile } from "../../../../components";
+import { Carousel, WorkoutTile, BackArrow } from "../../../../components";
 import "./SelectDay.scss";
 
 export const SelectDay = ({
@@ -70,12 +69,7 @@ export const SelectDay = ({
   };
   return (
     <div className="d-block pt-5">
-      <div
-        onClick={() => returnToFirstStep()}
-        className="text-start back-hover back-width pb-1"
-      >
-        <IoArrowBackCircleSharp color="#EBAA28" size={30} />
-      </div>
+      <BackArrow onClick={() => returnToFirstStep()} />
       <h2 className="fw-bold pb-2"> Select Day </h2>
       <h3 className="fw-bold pb-4 yellow">{program.name}</h3>
       <br />

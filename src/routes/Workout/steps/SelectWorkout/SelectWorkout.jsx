@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
-import { IoArrowBackCircleSharp } from "react-icons/io5";
 import { useNavigate } from "react-router";
 
-import { CustButton, WorkoutItem } from "../../../../components";
+import { CustButton, WorkoutItem, BackArrow } from "../../../../components";
 import { confettiEffect } from "./Confetti";
 
 const CARDIO_INDEX = 0;
@@ -54,12 +53,7 @@ export const SelectWorkout = ({
   // to avoid the error
   return (
     <div className="d-block pt-5">
-      <div
-        onClick={() => returnToSecondStep()}
-        className="text-start back-hover back-width pb-1"
-      >
-        <IoArrowBackCircleSharp color="#EBAA28" size={30} />
-      </div>
+      <BackArrow onClick={() => returnToSecondStep()} />
       <h2 className="fw-bold pb-2">{`Today's Workout`}</h2>
       <h3 className="fw-bold pb-4 yellow">{selectedDay.dayTitle}</h3>
       <div>

@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
 import { useEffect } from "react";
-import { IoArrowBackCircleSharp } from "react-icons/io5";
 
-import { CustButton, GoalDisplay } from "../../../../components";
+import { BackArrow, CustButton, GoalDisplay } from "../../../../components";
 
 export const Rest = ({
   next,
@@ -76,12 +75,7 @@ export const Rest = ({
   return (
     <div className="d-block pt-5">
       {currentWorkoutSets == 0 && (
-        <div
-          onClick={() => returnToThirdStep()}
-          className="text-start back-hover back-width pb-1"
-        >
-          <IoArrowBackCircleSharp color="#EBAA28" size={30} />
-        </div>
+        <BackArrow onClick={() => returnToThirdStep()} />
       )}
       <h2 className="fw-bold pb-2 pt-3">
         {isCardio ? selectedWorkout.name : selectedWorkout.completeWorkoutName}
