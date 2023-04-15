@@ -1,29 +1,20 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { CustButton } from "../../../../components";
 
 export const PerformWorkout = ({
   next,
   prev,
-  step,
   goal,
   currentWorkoutSets,
-  setCurrentWorkoutSets,
   isCardio,
-  setCompletedWorkouts,
 }) => {
-  console.log(
-    next,
-    prev,
-    step,
-    goal,
-    currentWorkoutSets,
-    setCurrentWorkoutSets,
-    setCompletedWorkouts,
-    isCardio
-  );
-  const [currReps, setCurrReps] = useState(0.0);
+  useEffect(() => {
+    window.scrollTo(0, 1);
+  }, []);
+
+  const [currReps, setCurrReps] = useState();
 
   const generateGoalText = () => {
     return isCardio
@@ -79,10 +70,7 @@ export const PerformWorkout = ({
 PerformWorkout.propTypes = {
   next: PropTypes.func,
   prev: PropTypes.func,
-  step: PropTypes.number,
   goal: PropTypes.object,
   currentWorkoutSets: PropTypes.number,
-  setCurrentWorkoutSets: PropTypes.func,
   isCardio: PropTypes.bool,
-  setCompletedWorkouts: PropTypes.func,
 };

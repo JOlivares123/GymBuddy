@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
+import { useEffect } from "react";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
+
 import { CustButton, GoalDisplay } from "../../../../components";
 
 export const Rest = ({
@@ -14,18 +16,11 @@ export const Rest = ({
   isCardio,
   setIsCardio,
 }) => {
+  useEffect(() => {
+    window.scrollTo(0, 1);
+  }, []);
+
   const returnToThirdStep = () => {
-    console.log(
-      next,
-      prev,
-      selectedWorkout,
-      setSelectedWorkout,
-      completedWorkouts,
-      setCompletedWorkouts,
-      currentWorkoutSets,
-      setCurrentWorkoutSets,
-      setIsCardio
-    );
     // update isCardio state to avoid errors with title
     if (isCardio) {
       setIsCardio(false);
@@ -96,10 +91,14 @@ export const Rest = ({
         isCardio={isCardio}
       />
       <div className="pt-5">
-        <h4>Completed Sets:</h4>
-        <h2 className="yellow">{currentWorkoutSets}</h2>
+        {!isCardio && (
+          <>
+            <h4>Completed Sets:</h4>
+            <h2 className="yellow">{currentWorkoutSets}</h2>
+          </>
+        )}
         <CustButton
-          text="Start Set"
+          text={`Start ${isCardio ? "Cardio" : "Set"}`}
           color="yellow"
           className="btn-lg mt-3 w-50"
           onClick={() => startSet()}

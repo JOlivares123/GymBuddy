@@ -18,7 +18,7 @@ const renderTime = ({ remainingTime }) => {
 
 export const TimerMode = ({ prev, restTimeSecs }) => {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 1);
   }, []);
   // use prev(2) to navigate back to Rest.jsx
   return (

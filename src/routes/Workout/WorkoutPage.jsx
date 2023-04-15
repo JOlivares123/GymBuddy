@@ -84,7 +84,6 @@ export const WorkoutPage = ({ programs = data.programs }) => {
             completedWorkouts={completedWorkouts}
             setCompletedWorkouts={setCompletedWorkouts}
             setSelectedDay={setSelectedDay}
-            selectedWorkout={selectedWorkout}
             setSelectedWorkout={setSelectedWorkout}
             setIsCardio={setIsCardio}
           />
@@ -102,7 +101,6 @@ export const WorkoutPage = ({ programs = data.programs }) => {
             setCurrentWorkoutSets={setCurrentWorkoutSets}
             isCardio={isCardio}
             setIsCardio={setIsCardio}
-            restTime={restTime}
           />
         );
       case 5:
@@ -110,14 +108,9 @@ export const WorkoutPage = ({ programs = data.programs }) => {
           <PerformWorkout
             next={nextStep}
             prev={prevStep}
-            step={step}
             goal={isCardio ? selectedWorkout : selectedWorkout.goal}
             currentWorkoutSets={currentWorkoutSets}
-            setCurrentWorkoutSets={setCurrentWorkoutSets}
             isCardio={isCardio}
-            setIsCardio={setIsCardio}
-            completedWorkouts={completedWorkouts}
-            setCompletedWorkouts={setCompletedWorkouts}
           />
         );
       case 6:
