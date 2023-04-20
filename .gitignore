@@ -7,7 +7,7 @@
 .env.production.local
 *.log
 *.gz
-.eslintrc.json
+**/.eslintrc.json
 
 # Coveralls
 .nyc_output
