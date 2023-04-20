@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
-import { useEffect } from "react";
+import Modal from "react-bootstrap/Modal";
+import { CgNotes } from "react-icons/cg";
+import { useEffect, useState } from "react";
 
 import { BackArrow, CustButton, GoalDisplay } from "../../../../components";
+import "./Rest.scss";
 
 export const Rest = ({
   next,
@@ -15,6 +18,12 @@ export const Rest = ({
   isCardio,
   setIsCardio,
 }) => {
+  const [showNotes, setShowNotes] = useState(false);
+
+  const toggleNotes = () => {
+    setShowNotes(!showNotes);
+  };
+
   useEffect(() => {
     window.scrollTo(0, 1);
   }, []);
@@ -77,9 +86,39 @@ export const Rest = ({
       {currentWorkoutSets == 0 && (
         <BackArrow onClick={() => returnToThirdStep()} />
       )}
-      <h2 className="fw-bold pb-2 pt-3">
-        {isCardio ? selectedWorkout.name : selectedWorkout.completeWorkoutName}
-      </h2>
+      <div className="d-flex">
+        <h2 className="fw-bold pb-2 pt-3 col-12">
+          {isCardio
+            ? selectedWorkout.name
+            : selectedWorkout.completeWorkoutName}
+          {selectedWorkout?.notes && (
+            <CgNotes
+              onClick={() => toggleNotes()}
+              className="col-1 back-hover ms-3 NotesIcon"
+              color="#EB286A"
+            />
+          )}
+        </h2>
+      </div>
+      <Modal
+        className="px-5 ToastTextColor"
+        show={showNotes}
+        size="sm"
+        aria-labelledby="contained-modal-title-vcenter black"
+        centered
+      >
+        <Modal.Header>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Workout Notes
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>{selectedWorkout.notes}</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <CustButton onClick={() => toggleNotes()} text="Close" />
+        </Modal.Footer>
+      </Modal>
       <GoalDisplay
         goal={isCardio ? selectedWorkout : selectedWorkout.goal}
         isCardio={isCardio}

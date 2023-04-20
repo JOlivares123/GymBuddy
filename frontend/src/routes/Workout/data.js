@@ -23,7 +23,8 @@ export const data = {
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "pushfjfjf",
+              notes:
+                "pushfjfjf this is a really long thing of notes. What am I doing. ",
               muscles_worked: ["Chest"],
             },
             {
