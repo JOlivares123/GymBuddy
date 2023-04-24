@@ -12,7 +12,7 @@ export const data = {
             name: "incline treadmill",
             // 10 mins in secs
             duration: 600,
-            notes: null,
+            notes: "13 degrees incline at 2.5 speed",
           },
           workouts_needed: [
             {
@@ -23,8 +23,7 @@ export const data = {
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes:
-                "pushfjfjf this is a really long thing of notes. What am I doing. ",
+              notes: "legs @ 8 \n arms @ 4",
               muscles_worked: ["Chest"],
             },
             {
@@ -35,7 +34,7 @@ export const data = {
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "pushfjfjfff",
+              notes: "legs @ 8 \n arms @ 4",
               muscles_worked: ["Chest"],
             },
             {
@@ -46,7 +45,8 @@ export const data = {
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "pushfjfjff",
+              notes:
+                "- superset with 121lbs \n- neutral grip bar\n- bring elbows outwards first then down",
               muscles_worked: ["Upper Back"],
             },
             {
@@ -57,7 +57,8 @@ export const data = {
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: null,
+              notes:
+                "- long bar\n- palms facing me\n- body straight up and hands shoulder width apart",
               muscles_worked: ["Lats"],
             },
             {
@@ -72,14 +73,14 @@ export const data = {
               muscles_worked: ["Shoulder"],
             },
             {
-              workout_name: "side shoulder raise",
+              workout_name: "cable side shoulder raise",
               goal: {
-                weight: 20,
-                sets: 2,
+                weight: 15,
+                sets: 3,
                 min_reps: 6,
                 max_reps: 9,
               },
-              notes: "pus1111234hfjfjf",
+              notes: "- cables @ 2",
               muscles_worked: ["Shoulder"],
             },
           ],
@@ -91,18 +92,18 @@ export const data = {
             name: "incline treadmill",
             // 10 mins in secs
             duration: 600,
-            notes: "pushfjfjf",
+            notes: "13 degrees incline at 2.5 speed",
           },
           workouts_needed: [
             {
-              workout_name: "double crossbody tricep extension",
+              workout_name: "single crossbody tricep extension",
               goal: {
                 weight: 27.5,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "pushfjfjf",
+              notes: "- do assisted ones to help push\n- cable @ 15",
               muscles_worked: ["Tricep"],
             },
             {
@@ -113,7 +114,7 @@ export const data = {
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: null,
+              notes: "- cable @ 15",
               muscles_worked: ["Tricep"],
             },
             {
@@ -124,7 +125,7 @@ export const data = {
                 min_reps: 6,
                 max_reps: 9,
               },
-              notes: "pushfjfj12f",
+              notes: "- cable @ 2",
               muscles_worked: ["Bicep"],
             },
             {
@@ -135,7 +136,8 @@ export const data = {
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "pushfjfjf",
+              notes:
+                "- chest up and elbow in front of delt and lean forward a bit",
               muscles_worked: ["Bicep"],
             },
             {
@@ -146,7 +148,7 @@ export const data = {
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: null,
+              notes: "- seat @4",
               muscles_worked: ["Bicep"],
             },
             {
@@ -157,7 +159,7 @@ export const data = {
                 min_reps: 6,
                 max_reps: 9,
               },
-              notes: null,
+              notes: "cable @ 3",
               muscles_worked: ["Shoulder"],
             },
           ],
@@ -169,7 +171,7 @@ export const data = {
             name: "incline treadmill",
             // 10 mins in secs
             duration: 600,
-            notes: "pushfjfjf",
+            notes: "13 degrees incline at 2.5 speed",
           },
           workouts_needed: [
             {
@@ -180,7 +182,7 @@ export const data = {
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "1243445",
+              notes: null,
               muscles_worked: ["Hamstrings", "Glutes"],
             },
             {
@@ -191,7 +193,7 @@ export const data = {
                 min_reps: 6,
                 max_reps: 9,
               },
-              notes: "4444 go depeepepe",
+              notes: "go deep and hold at bottom",
               muscles_worked: ["Quads", "Glutes"],
             },
             {
@@ -202,7 +204,7 @@ export const data = {
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "pus1231hfjfjf",
+              notes: null,
               muscles_worked: ["Quads"],
             },
             {
@@ -213,29 +215,29 @@ export const data = {
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "pushfjfj1111f",
+              notes: null,
               muscles_worked: ["Hamstrings"],
             },
             {
               workout_name: "Hip Abductor machine",
               goal: {
-                weight: 110,
+                weight: 150,
                 sets: 2,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "pushfjfj1111f",
+              notes: null,
               muscles_worked: ["Abductors"],
             },
             {
               workout_name: "Calf Press",
               goal: {
-                weight: 210,
+                weight: 215,
                 sets: 2,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "pushfjfj1111f",
+              notes: null,
               muscles_worked: ["Calves"],
             },
           ],
