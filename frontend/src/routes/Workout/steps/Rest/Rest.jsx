@@ -86,19 +86,19 @@ export const Rest = ({
       {currentWorkoutSets == 0 && (
         <BackArrow onClick={() => returnToThirdStep()} />
       )}
-      <div className="d-flex">
+      <div className="d-flex flex-column align-items-center">
         <h2 className="fw-bold pb-2 pt-3 col-12">
           {isCardio
             ? selectedWorkout.name
             : selectedWorkout.completeWorkoutName}
-          {selectedWorkout?.notes && (
-            <CgNotes
-              onClick={() => toggleNotes()}
-              className="col-1 back-hover ms-3 NotesIcon"
-              color="#EB286A"
-            />
-          )}
         </h2>
+        {selectedWorkout?.notes && (
+          <CgNotes
+            onClick={() => toggleNotes()}
+            className="col-1 back-hover ms-3 NotesIcon"
+            color="#EB286A"
+          />
+        )}
       </div>
       <Modal
         className="px-5 ToastTextColor"
@@ -107,15 +107,13 @@ export const Rest = ({
         aria-labelledby="contained-modal-title-vcenter black"
         centered
       >
-        <Modal.Header>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Workout Notes
-          </Modal.Title>
+        <Modal.Header className="justify-content-center">
+          <Modal.Title>Workout Notes</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="linebreak">
           <p>{selectedWorkout.notes}</p>
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className="justify-content-center">
           <CustButton onClick={() => toggleNotes()} text="Close" />
         </Modal.Footer>
       </Modal>

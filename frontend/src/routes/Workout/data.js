@@ -29,12 +29,12 @@ export const data = {
             {
               workout_name: "Neutral Bench Press Machine",
               goal: {
-                weight: 160,
+                weight: 170,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "legs @ 8 \n arms @ 4",
+              notes: "legs @ 10 \n arms @ 5",
               muscles_worked: ["Chest"],
             },
             {
@@ -52,13 +52,13 @@ export const data = {
             {
               workout_name: "Cable Lat Pulldown",
               goal: {
-                weight: 142,
+                weight: 120,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
               notes:
-                "- long bar\n- palms facing me\n- body straight up and hands shoulder width apart",
+                "- long bar\n- body straight up and hands on outer edge of bar",
               muscles_worked: ["Lats"],
             },
             {
