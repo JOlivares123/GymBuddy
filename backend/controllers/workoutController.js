@@ -15,20 +15,20 @@ const createWorkout = async (req, res) => {
         
         // if they dont, create a program document
         if(programDocIds.length === 0){
-            // add ObjectId attribute to program from req.body
-            program.id = ObjectId();
-            // then append to programs array 
-            const newProgram = await Program.create({programs: [program]})
+            // then append to programDocIds
+            const newProgram = await Program.create({program})
 
             // extract document id from newProgram
             const newProgramDocId = newProgram._id
             
             // then update user document with id of newly created
             // program document
+            // update syntax
             await User.findByIdAndUpdate(userId, {programDocIds: [newProgramDocId]})
         }
         else{
             // user already has an existing program document
+            // update syntax: want to add new doc id to beginning of array
             const programDoc = await Program.findByIdAndUpdate(programDocIds[0], )
             // fetch document 
             // append new program to beginning 
