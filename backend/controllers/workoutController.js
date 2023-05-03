@@ -10,30 +10,22 @@ const createWorkout = async (req, res) => {
     // or extrac userId from req.params
 
     try {
-        // first check if user has any programs already in user schema 
-        const programDocIds = await User.findById(userId).programDocIds
+        // fetch user doc to append new program
+        const userDoc = await User.findById(userId)
         
-        // if they dont, create a program document
-        if(programDocIds.length === 0){
-            // then append to programDocIds
-            const newProgram = await Program.create({program})
+        // create new program
+        const newProgram = await Program.create({program})
 
-            // extract document id from newProgram
-            const newProgramDocId = newProgram._id
+        // extract document id from newProgram
+        const newProgramDocId = newProgram._id
             
-            // then update user document with id of newly created
-            // program document
-            // update syntax
-            await User.findByIdAndUpdate(userId, {programDocIds: [newProgramDocId]})
-        }
-        else{
-            // user already has an existing program document
-            // update syntax: want to add new doc id to beginning of array
-            const programDoc = await Program.findByIdAndUpdate(programDocIds[0], )
-            // fetch document 
-            // append new program to beginning 
-        }
-
+        // then update user document with id of newly created
+        // program document
+        userDoc.programDocIds.unshift(newProgramDocId)
+    
+        // save updated docs: Program + User
+        await userDoc.save();
+        await newProgram.save();
     }
     catch(error){
         res.status(400).json({error: error.message})
