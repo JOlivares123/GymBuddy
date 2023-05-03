@@ -24,7 +24,7 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    programDocIds: [Schema.Types.ObjectId]
+    programDocIds: [{type: Schema.Types.ObjectId, ref: "Program"}]
     
 }, { timestamps: true })
 // timestamps: true - adds createdAt and updated attributes to document
