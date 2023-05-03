@@ -16,5 +16,10 @@ Created by Jacob
 ![Logged in homepage](https://drive.google.com/uc?export=view&id=1N9plJkOMgV1g3L1UZr0_xRVfpn0ISTtL)
 
 ### Workout Flow
-* **this is only the first step**
-![first step in workout flow](https://drive.google.com/uc?export=view&id=1AQFVXi6G3NqiNL1ffvmAe7ik61SHV9ej)
+* **workout flow is almost complete**
+* you can try it out @ https://the-gym-buddy.vercel.app/workout
+  * currently this is using mock data as I am currently building the backend still
+  * TODOS: 
+    [x] create MongoDB + Express backend
+    [ ] implement state management through page refresh with Redux *OR* localStorage
+    [ ] create backend API endpoints
