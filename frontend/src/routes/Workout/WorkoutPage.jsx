@@ -13,6 +13,11 @@ import {
 import { data } from "./data";
 
 export const WorkoutPage = ({ programs = data.programs }) => {
+  // TODO: add this to api requests when creating programs to verify user
+  /*
+  const {user} = useAuthContext()
+  headers : { 'Authorization' : `Bearer ${user.token}`} 
+  */
   // TODO: create state var that will hold log info to post to DB
   // const [logData, setLogData] = useState(null);
   const [step, setStep] = useState(1);

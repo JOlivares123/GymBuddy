@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { useAuthContext } from "./hooks/useAuthContext";
 
 import {
   HomePage,
@@ -12,16 +13,39 @@ import {
 import "./App.scss";
 
 const App = () => {
+  const { user } = useAuthContext();
+
   return (
     <div className="App-container">
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/workout" element={<WorkoutPage />} />
-        <Route path="/stats" element={<StatsPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
+        <Route
+          path="/"
+          element={!user ? <LandingPage /> : <Navigate to="/home" />}
+        />
+        <Route
+          path="/login"
+          element={!user ? <LoginPage /> : <Navigate to="/home" />}
+        />
+        <Route
+          path="/signup"
+          element={!user ? <SignupPage /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/home"
+          element={user ? <HomePage /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/workout"
+          element={user ? <WorkoutPage /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/stats"
+          element={user ? <StatsPage /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/profile"
+          element={user ? <ProfilePage /> : <Navigate to="/" />}
+        />
       </Routes>
     </div>
   );
