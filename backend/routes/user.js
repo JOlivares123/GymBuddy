@@ -1,7 +1,6 @@
 const express = require('express');
 const authController = require('./../controllers/authController')
 const router = express.Router();
-
 // set cookies on api call with res.setHeader('Set-Cookie', 'cookieName=value')
 // with cookie-parser pkg, you can set cookies with res.cookie('cookieName', value
 // {maxAge: time in ms}) (can specify cookie expiration with options) (use secure: true in options when deploying)
@@ -19,23 +18,5 @@ router.post('/signup', authController.signup_post)
 
 // POST login user
 router.post('/login', authController.login_post)
-
-router.get('/', (req, res)=>{
-    res.json({msg: 'TESTING API'})
-})
-
-// GET all programs for user
-router.get('/workout', async (req, res) => {
-
-})
-
-// POST create new program for user
-router.post('/workout/create-program', async (req, res) => {
-    
-})
-
-// POST add session to history collection
-
-// PATCH update program for user
 
 module.exports = router;
