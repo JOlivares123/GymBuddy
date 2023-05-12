@@ -15,7 +15,7 @@ export const useSignup = () => {
       setIsLoading(true);
       const res = await axios.post(
         // TODO: replace url
-        "http://localhost:3001/api/signup",
+        "/api/signup",
         JSON.stringify({
           email: email,
           password: password,
