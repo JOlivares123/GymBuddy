@@ -11,20 +11,9 @@ const dbConnect = require('./db/dbConnect')
  // create express server
 const app = express();
 
-const dir = path.join(__dirname, '..')
-fs.readdir(dir, function(err, files){
-    if(err){
-        return console.log('Unable to scan dir: '+ err)
-    }
-    files.forEach(function(file){
-        console.log(file)
-    })
-})
 // for deployment
 if(process.env.NODE_ENV === 'prod'){
     app.use(express.static( '../frontend/build'));
-    console.log(path.resolve(__dirname, '..'))
-    console.log(path.resolve(__dirname, '..', 'frontend'))
     app.get('*', (req, res)=> {
         res.sendFile(path.resolve(__dirname, '..','frontend', 'build', 'index.html'))
     })
