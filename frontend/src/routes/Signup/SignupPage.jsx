@@ -19,9 +19,9 @@ export const SignupPage = () => {
   };
 
   return (
-    <>
-      <h1 className="mt-5">Sign Up</h1>
-      <form className="me-auto ms-auto col-7 mt-4">
+    <div className="pt-5">
+      <h1>Sign Up</h1>
+      <form className="mx-auto col-7 mt-4">
         <div className="mb-3 text-start">
           <label htmlFor="firstName" className="form-label">
             First Name <span style={{ color: "red" }}>*</span>
@@ -104,6 +104,6 @@ export const SignupPage = () => {
           Login
         </a>
       </h5>
-    </>
+    </div>
   );
 };

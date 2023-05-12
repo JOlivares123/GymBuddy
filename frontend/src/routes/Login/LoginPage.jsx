@@ -16,9 +16,9 @@ export const LoginPage = () => {
   };
 
   return (
-    <>
-      <h1 className="mt-5">Login</h1>
-      <form className="me-auto ms-auto col-7 mt-4">
+    <div className="pt-5">
+      <h1>Login</h1>
+      <form className="mx-auto col-7 mt-4">
         <div className="mb-3 text-start">
           <label htmlFor="email" className="form-label">
             Email Address
@@ -66,6 +66,6 @@ export const LoginPage = () => {
           Sign Up
         </a>
       </h5>
-    </>
+    </div>
   );
 };
