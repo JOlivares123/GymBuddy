@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors')
 const path = require('path')
+const fs = require('fs')
 const cookieParser = require('cookie-parser');
 require('dotenv').config()
 const userRoutes = require('./routes/user')
@@ -10,6 +11,15 @@ const dbConnect = require('./db/dbConnect')
  // create express server
 const app = express();
 
+const dir = path.join(__dirname, '..')
+fs.readdir(dir, function(err, files){
+    if(err){
+        return console.log('Unable to scan dir: '+ err)
+    }
+    files.forEach(function(file){
+        console.log(file)
+    })
+})
 // for deployment
 if(process.env.NODE_ENV === 'prod'){
     app.use(express.static( '../frontend/build'));
