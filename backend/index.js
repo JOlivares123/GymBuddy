@@ -13,7 +13,8 @@ const app = express();
 // for deployment
 if(process.env.NODE_ENV === 'prod'){
     app.use(express.static( '../frontend/build'));
-    console.log(__dirname)
+    console.log(path.resolve(__dirname, '..'))
+    console.log(path.resolve(__dirname, '..', 'frontend'))
     app.get('*', (req, res)=> {
         res.sendFile(path.resolve(__dirname, '..','frontend', 'build', 'index.html'))
     })
