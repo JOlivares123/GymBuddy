@@ -6,7 +6,7 @@ import { Tile } from "../../components/Tile/Tile";
 import data from "./HomePageCopy.json";
 import "./HomePage.scss";
 
-export const HomePage = ({ name = "Jacob" }) => {
+export const HomePage = ({ name = "User" }) => {
   // can now fetch backend api endpoints
   // useEffect(() => {
   //   const loadData = async () => {
