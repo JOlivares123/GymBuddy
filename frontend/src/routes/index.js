@@ -5,3 +5,4 @@ export { ProfilePage } from "./Profile/ProfilePage";
 export { SignupPage } from "./Signup/SignupPage";
 export { StatsPage } from "./Stats/StatsPage";
 export { WorkoutPage } from "./Workout/WorkoutPage";
+export { CreateWorkout } from "./CreateWorkout/CreateWorkout";

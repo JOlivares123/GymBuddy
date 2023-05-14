@@ -13,6 +13,7 @@ export const SelectProgram = ({
   next,
   selectProgram,
   setSelectedProgramDayTitles,
+  goToCreateWorkout,
 }) => {
   const navigate = useNavigate();
   //handles logic to navigate home is back button pressed
@@ -66,6 +67,7 @@ export const SelectProgram = ({
         <CustButton
           text="Create Program"
           color="pink"
+          onClick={() => goToCreateWorkout()}
           className="mt-5 btn-lg"
         />
       </div>
@@ -77,5 +79,6 @@ SelectProgram.propTypes = {
   myPrograms: PropTypes.arrayOf(PropTypes.object),
   next: PropTypes.func,
   selectProgram: PropTypes.func,
+  goToCreateWorkout: PropTypes.func,
   setSelectedProgramDayTitles: PropTypes.func,
 };

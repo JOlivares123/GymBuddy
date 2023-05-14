@@ -9,6 +9,7 @@ import {
   SignupPage,
   StatsPage,
   WorkoutPage,
+  CreateWorkout,
 } from "./routes";
 import "./App.scss";
 
@@ -37,6 +38,10 @@ const App = () => {
         <Route
           path="/workout"
           element={user ? <WorkoutPage /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/workout/create-workout"
+          element={user ? <CreateWorkout /> : <Navigate to="/" />}
         />
         <Route
           path="/stats"

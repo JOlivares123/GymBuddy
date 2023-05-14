@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
@@ -13,6 +14,7 @@ import {
 import { data } from "./data";
 
 export const WorkoutPage = ({ programs = data.programs }) => {
+  const navigate = useNavigate();
   // TODO: add this to api requests when creating programs to verify user
   /*
   const {user} = useAuthContext()
@@ -64,6 +66,7 @@ export const WorkoutPage = ({ programs = data.programs }) => {
             next={nextStep}
             selectProgram={selectProgram}
             myPrograms={programs}
+            goToCreateWorkout={() => navigate("/workout/create-workout")}
             setSelectedProgramDayTitles={setSelectedProgramDayTitles}
           />
         );

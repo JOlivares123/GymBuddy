@@ -49,6 +49,7 @@ export const LoginPage = () => {
         ) : (
           <CustButton
             text="Login"
+            color="pink"
             onClick={async () => await logUserIn()}
             className={isMobile() ? "col-7 mt-3" : "px-4 mt-3" + " text-center"}
           />
@@ -61,7 +62,7 @@ export const LoginPage = () => {
       )}
       <h5 className="mt-5">
         Need an account?{" "}
-        <a className="white" href="/signup">
+        <a className="yellow" href="/signup">
           {" "}
           Sign Up
         </a>
