@@ -62,15 +62,13 @@ export const SelectProgram = ({
           );
         })}
       </Carousel>
-      {myPrograms.length <= 15 && (
-        <div className="mt-5">
-          <CustButton
-            text="Create Program"
-            color="pink"
-            className="mt-5 btn-lg"
-          />
-        </div>
-      )}
+      <div className="mt-5">
+        <CustButton
+          text="Create Program"
+          color="pink"
+          className="mt-5 btn-lg"
+        />
+      </div>
     </div>
   );
 };

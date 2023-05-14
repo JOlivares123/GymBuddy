@@ -2,7 +2,7 @@ const express = require('express');
 const requireAuth = require('./../middleware/requireAuth')
 const router = express.Router();
 
-// add in auth middleware I created to protect these routes
+// add in auth middleware to protect these routes for users only
 router.use(requireAuth)
 
 // GET all programs for user

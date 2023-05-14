@@ -48,14 +48,13 @@ module.exports.signup_post = async (req, res) => {
             lastName: lastName,
             email: email,
             password: password,
-            programDocIds: []
         })
 
-        // create JWT
+        // create JWT for user._id
         const token = createToken(newUser._id);
 
         // res.cookie('jwt', token, {maxAge: maxAge*1000, origin:'http://localhost:3000'})
-        res.status(200).json({user: newUser._id, token})
+        res.status(200).json({ token })
     }
     catch(error){
         const errors = handleErrors(error)
@@ -69,10 +68,10 @@ module.exports.login_post = async (req, res) => {
     try{
         const user = await User.login(email, password);
 
-        // create JWT
+        // create JWT for user._id
         const token = createToken(user._id);
         // res.cookie('jwt', token, {maxAge: maxAge*1000, origin:'http://localhost:3000'})
-        res.status(200).json({user: user._id, token})
+        res.status(200).json({ token })
     }
     catch(err){
         const errors = handleErrors(err)

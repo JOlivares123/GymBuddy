@@ -6,12 +6,15 @@ const Schema = mongoose.Schema
 // to avoid huge documents, I will only hold one
 // program per document
 const programSchema = new Schema({
-    _id: {
-        type: Schema.Types.ObjectId,
-    },
     name: {
         type: String,
         required: true,
+    },
+    // index userId to easily fetch them
+    userId:{
+        type: Schema.Types.ObjectId,
+        required: true,
+        index: true
     },
     days: [{
         id: Number,

@@ -25,7 +25,6 @@ const userSchema = new Schema({
         required: [true, "Please enter a valid password"],
         minlength: [6, "Minimum password length is 6 characters"],
     },
-    programDocIds: [{type: Schema.Types.ObjectId, ref: "Program"}]
     
 }, { timestamps: true })
 // timestamps: true - adds createdAt and updated attributes to document
