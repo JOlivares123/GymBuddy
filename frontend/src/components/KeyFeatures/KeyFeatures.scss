@@ -1,5 +1,6 @@
 .key-features-container {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     margin-top: 80px;
     width: 100%;
 }
@@ -9,7 +10,24 @@
     color: white;
 }
 
-.features {
+.feature {
     background-color: var(--base-secondary-color);
-    width: 100%;
+    border-radius: 10px;
+    width: 300px;
+    height: 215px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 767px){
+    .feature-sm {
+        margin-bottom: 20px;
+    }
+}
+@media screen and (min-width: 768px){
+    .feature-md-above {
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
 }
