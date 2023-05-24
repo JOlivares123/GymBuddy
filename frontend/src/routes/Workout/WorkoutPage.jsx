@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
+// import { useState, useEffect } from "react";
 import { useState } from "react";
 import PropTypes from "prop-types";
+// import axios from "axios";
 
 import {
   PerformWorkout,
@@ -17,8 +19,21 @@ export const WorkoutPage = ({ programs = data.programs }) => {
   const navigate = useNavigate();
   // TODO: add this to api requests when creating programs to verify user
   /*
+  const [allPrograms, setAllPrograms] = useState(null);
+  const [isLoading, setIsLoading] = useState(false)
   const {user} = useAuthContext()
-  headers : { 'Authorization' : `Bearer ${user.token}`} 
+  useEffect(() => {
+    setIsLoading(true)
+    const getAllWorkouts = async () => {
+      const resp = await axios.get("/workout/all-programs", {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
+      setAllPrograms(resp.data);
+    };
+    await getAllWorkouts();
+    setIsLoading(false)
+  }, []);
+
   */
   // TODO: create state var that will hold log info to post to DB
   // const [logData, setLogData] = useState(null);

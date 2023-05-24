@@ -1,0 +1,47 @@
+.maxWidth {
+    max-width: 500px;
+}
+
+.repsMaxWidth {
+    max-width: 225px;
+}
+
+.formContainer {
+    background-color: var(--base-secondary-color);
+    border-radius: 10px;
+    padding: 10px 0;
+}
+
+// Override for MultiSelect
+.rmsc {
+    --rmsc-main: var(--primary-orange);
+    --rmsc-hover: rgb(236, 219, 219);
+    --rmsc-selected: #eb7f6a;
+    --rmsc-border: var(--primary-orange);
+    --rmsc-gray: white;
+    --rmsc-bg: white;
+    --rmsc-p: 10px; /* Spacing */
+    --rmsc-radius: 10px; /* Radius */
+    --rmsc-h: 38px; /* Height */
+    color:black
+}
+.rmsc .dropdown-content .panel-content .select-panel .options .select-item{
+    // background-color: rgba(255, 255, 199, 0.439);
+    border: 1px solid var(--primary-orange);
+}
+
+// Override for ListGroup (Bootstrap)
+
+.list-group {
+    --bs-list-group-color: white;
+    --bs-list-group-bg: transparent;
+    --bs-list-group-border-color: rgba(235, 72, 40, 0.25);
+}
+
+.black {
+    color: black
+}
+
+.grey {
+    color: grey
+}

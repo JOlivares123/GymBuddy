@@ -1,0 +1,20 @@
+[
+    {"label": "Biceps", "value": "Biceps"},
+    {"label": "Triceps", "value": "Triceps"},
+    {"label": "Forearms", "value": "Forearms"},
+    {"label": "Front Shoulder", "value": "Front Shoulder"},
+    {"label": "Side Shoulder", "value": "Side Shoulder"},
+    {"label": "Rear Shoulder", "value": "Rear Shoulder"},
+    {"label": "Chest", "value": "Chest"},
+    {"label": "Abs", "value": "Abs"},
+    {"label": "Upper Back", "value": "Upper Back"},
+    {"label": "Lats", "value": "Lats"},
+    {"label": "Lower Back", "value": "Lower Back"},
+    {"label": "Quads", "value": "Quads"},
+    {"label": "Hamstrings", "value": "Hamstrings"},
+    {"label": "Calves", "value": "Calves"},
+    {"label": "Glutes", "value": "Glutes"},
+    {"label": "Abdcutors", "value": "Abductors"},
+    {"label": "Adductors", "value": "Adductors"},
+    {"label": "Cardio", "value": "Cardio"}
+]
