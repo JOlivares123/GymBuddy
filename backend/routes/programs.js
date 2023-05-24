@@ -6,7 +6,7 @@ const router = express.Router();
 router.use(requireAuth)
 
 // GET all programs for user
-router.get('/workout', async (req, res) => {
+router.get('/workout/all-programs', async (req, res) => {
 
 })
 

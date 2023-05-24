@@ -22,7 +22,7 @@ const programSchema = new Schema({
             type: Number,
             required: true
         },
-        cardio: {
+        cardio: [{
             name: {
                 type: String,
                 required: true,
@@ -34,7 +34,7 @@ const programSchema = new Schema({
             notes: {
                 type: String
             }
-        },
+        }],
         workoutsNeeded: [{
             id: Number,
             workoutName: {
