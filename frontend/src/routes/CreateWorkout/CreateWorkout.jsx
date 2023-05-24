@@ -28,6 +28,8 @@ export const CreateWorkout = () => {
     notes: "",
     muscles: [],
   });
+  // probably need to modify one state for workouts and make the below state an object
+  const [isNewWorkoutCardio, setIsNewWorkoutCardio] = useState(false);
   const [newDayWorkouts, setNewDayWorkouts] = useState([]);
 
   const toggleWorkoutFormModal = () => {
@@ -168,6 +170,7 @@ export const CreateWorkout = () => {
             <Form.Check
               checked
               inline
+              onClick={() => setIsNewWorkoutCardio(false)}
               label="Weights"
               name="type"
               id="weights"
@@ -175,7 +178,7 @@ export const CreateWorkout = () => {
             />
             <Form.Check
               inline
-              onClick={() => console.log("cardio clicked")}
+              onClick={() => setIsNewWorkoutCardio(true)}
               label="Cardio"
               id="cardio"
               name="type"
@@ -198,66 +201,90 @@ export const CreateWorkout = () => {
             />
           </div>
 
-          <div className="col-10 mx-auto maxWidth text-start mb-3">
-            <label htmlFor="weight" className="form-label">
-              Weight (lbs)
-            </label>
-            <input
-              className="form-control TransparentInput black"
-              id="weight"
-              required
-              type="number"
-              step={0.01}
-              pattern="[0-9]*"
-              inputMode="numeric"
-              onChange={(e) =>
-                setNewWorkout({ ...newWorkout, weight: Number(e.target.value) })
-              }
-              aria-describedby="weightHelp"
-            />
-          </div>
-          <div className="col-10 mx-auto text-start maxWidth mb-3">
-            <label htmlFor="minReps" className="form-label">
-              Minimum Reps
-            </label>
-            <input
-              className="form-control TransparentInput black"
-              id="minReps"
-              required
-              type="number"
-              step={0.01}
-              pattern="[0-9]*"
-              inputMode="numeric"
-              onChange={(e) =>
-                setNewWorkout({
-                  ...newWorkout,
-                  minReps: Number(e.target.value),
-                })
-              }
-              aria-describedby="minRepsHelp"
-            />
-          </div>
-          <div className="col-10 mx-auto maxWidth text-start mb-3">
-            <label htmlFor="maxReps" className="form-label">
-              Maximum Reps
-            </label>
-            <input
-              className="form-control TransparentInput black"
-              id="maxReps"
-              required
-              type="number"
-              step={0.01}
-              pattern="[0-9]*"
-              inputMode="numeric"
-              onChange={(e) =>
-                setNewWorkout({
-                  ...newWorkout,
-                  maxReps: Number(e.target.value),
-                })
-              }
-              aria-describedby="maxRepsHelp"
-            />
-          </div>
+          {isNewWorkoutCardio ? (
+            <div className="col-10 mx-auto maxWidth text-start mb-3">
+              <label htmlFor="duration" className="form-label">
+                Cardio Duration (mins)
+              </label>
+              <input
+                className="form-control TransparentInput black"
+                id="duration"
+                required
+                type="number"
+                step={0.01}
+                pattern="[0-9]*"
+                inputMode="numeric"
+                onChange={(e) => console.log(Number(e.target.value))}
+                aria-describedby="weightHelp"
+              />
+            </div>
+          ) : (
+            <>
+              <div className="col-10 mx-auto maxWidth text-start mb-3">
+                <label htmlFor="weight" className="form-label">
+                  Weight (lbs)
+                </label>
+                <input
+                  className="form-control TransparentInput black"
+                  id="weight"
+                  required
+                  type="number"
+                  step={0.01}
+                  pattern="[0-9]*"
+                  inputMode="numeric"
+                  onChange={(e) =>
+                    setNewWorkout({
+                      ...newWorkout,
+                      weight: Number(e.target.value),
+                    })
+                  }
+                  aria-describedby="weightHelp"
+                />
+              </div>
+              <div className="col-10 mx-auto text-start maxWidth mb-3">
+                <label htmlFor="minReps" className="form-label">
+                  Minimum Reps
+                </label>
+                <input
+                  className="form-control TransparentInput black"
+                  id="minReps"
+                  required
+                  type="number"
+                  step={0.01}
+                  pattern="[0-9]*"
+                  inputMode="numeric"
+                  onChange={(e) =>
+                    setNewWorkout({
+                      ...newWorkout,
+                      minReps: Number(e.target.value),
+                    })
+                  }
+                  aria-describedby="minRepsHelp"
+                />
+              </div>
+              <div className="col-10 mx-auto maxWidth text-start mb-3">
+                <label htmlFor="maxReps" className="form-label">
+                  Maximum Reps
+                </label>
+                <input
+                  className="form-control TransparentInput black"
+                  id="maxReps"
+                  required
+                  type="number"
+                  step={0.01}
+                  pattern="[0-9]*"
+                  inputMode="numeric"
+                  onChange={(e) =>
+                    setNewWorkout({
+                      ...newWorkout,
+                      maxReps: Number(e.target.value),
+                    })
+                  }
+                  aria-describedby="maxRepsHelp"
+                />
+              </div>
+            </>
+          )}
           <div className="col-10 mx-auto maxWidth text-start mb-3">
             <label htmlFor="notes" className="form-label">
               Notes
