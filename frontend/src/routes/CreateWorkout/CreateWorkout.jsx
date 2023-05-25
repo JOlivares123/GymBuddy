@@ -168,7 +168,7 @@ export const CreateWorkout = () => {
         <Modal.Body>
           <Form className="col-10 mx-auto maxWidth mb-3 d-flex justify-content-center">
             <Form.Check
-              checked
+              checked={!isNewWorkoutCardio}
               inline
               onClick={() => setIsNewWorkoutCardio(false)}
               label="Weights"
@@ -178,6 +178,7 @@ export const CreateWorkout = () => {
             />
             <Form.Check
               inline
+              checked={isNewWorkoutCardio}
               onClick={() => setIsNewWorkoutCardio(true)}
               label="Cardio"
               id="cardio"
