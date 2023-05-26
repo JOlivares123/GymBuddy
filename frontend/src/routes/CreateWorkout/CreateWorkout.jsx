@@ -47,24 +47,23 @@ export const CreateWorkout = () => {
     navigate("/workout");
   };
 
+  const onAddCardio = () => {
+    console.log("add cardio");
+  };
   const onAddWorkout = () => {
     // check that form is valid (minReps < maxReps + nonEmpty)
     if (
-      !isNewWorkoutCardio &&
-      (newWorkout["name"].length === 0 ||
-        newWorkout["weight"] === 0 ||
-        newWorkout["minReps"] === 0 ||
-        newWorkout["maxReps"] === 0 ||
-        newWorkout["sets"] === 0 ||
-        selectedMuscles.length === 0)
+      newWorkout["name"].length === 0 ||
+      newWorkout["weight"] === 0 ||
+      newWorkout["minReps"] === 0 ||
+      newWorkout["maxReps"] === 0 ||
+      newWorkout["sets"] === 0 ||
+      selectedMuscles.length === 0
     ) {
       alert("Please fill in entire form");
-    } else if (
-      !isNewWorkoutCardio &&
-      newWorkout["minReps"] > newWorkout["maxReps"]
-    ) {
+    } else if (newWorkout["minReps"] > newWorkout["maxReps"]) {
       alert("Please select valid rep range");
-    } else if (!isNewWorkoutCardio) {
+    } else {
       // create new array from selectedMuscles
       const cleanedSelectedMuscles = selectedMuscles.map(
         (muscle) => muscle.value
@@ -92,11 +91,16 @@ export const CreateWorkout = () => {
       });
       // close modal
       setShowWorkoutForm(!showWorkoutForm);
-    } else {
-      console.log("cardio");
     }
   };
 
+  const handleOnAdd = () => {
+    if (!isNewWorkoutCardio) {
+      onAddWorkout();
+    } else {
+      onAddCardio();
+    }
+  };
   console.log(newWorkout, newDay);
   return (
     <div className="d-block py-5">
@@ -388,7 +392,7 @@ export const CreateWorkout = () => {
           <CustButton
             className="px-3"
             text="Add"
-            onClick={() => onAddWorkout()}
+            onClick={() => handleOnAdd()}
           />
           <CustButton onClick={() => toggleWorkoutFormModal()} text="Cancel" />
         </Modal.Footer>
