@@ -11,6 +11,7 @@ import MUSCLE_DATA from "./MuscleGroups.json";
 import "./CreateWorkout.scss";
 import { isMobile } from "../../utils/WindowSize";
 
+const SECS = 60;
 export const CreateWorkout = () => {
   const navigate = useNavigate();
 
@@ -19,18 +20,24 @@ export const CreateWorkout = () => {
   // MultiSelect to grab the value we need so I can easily add it to
   // newWorkout
   const [selectedMuscles, setSelectedMuscles] = useState([]);
+
+  // const [newProgram, setNewProgram] = useState({ name: "", days: [] });
+  const [newDay, setNewDay] = useState({
+    restDuration: 0,
+    cardio: [],
+    workoutsNeeded: [],
+  });
   // state to hold new workout data from form
   const [newWorkout, setNewWorkout] = useState({
     name: "",
     weight: 0,
     minReps: 0,
     maxReps: 0,
+    sets: 0,
     notes: "",
-    muscles: [],
+    musclesWorked: [],
   });
-  // probably need to modify one state for workouts and make the below state an object
   const [isNewWorkoutCardio, setIsNewWorkoutCardio] = useState(false);
-  const [newDayWorkouts, setNewDayWorkouts] = useState([]);
 
   const toggleWorkoutFormModal = () => {
     setShowWorkoutForm(!showWorkoutForm);
@@ -43,26 +50,34 @@ export const CreateWorkout = () => {
   const onAddWorkout = () => {
     // check that form is valid (minReps < maxReps + nonEmpty)
     if (
-      newWorkout["name"].length === 0 ||
-      newWorkout["weight"] === 0 ||
-      newWorkout["minReps"] === 0 ||
-      newWorkout["maxReps"] === 0 ||
-      selectedMuscles.length === 0
+      !isNewWorkoutCardio &&
+      (newWorkout["name"].length === 0 ||
+        newWorkout["weight"] === 0 ||
+        newWorkout["minReps"] === 0 ||
+        newWorkout["maxReps"] === 0 ||
+        newWorkout["sets"] === 0 ||
+        selectedMuscles.length === 0)
     ) {
       alert("Please fill in entire form");
-    } else if (newWorkout["minReps"] > newWorkout["maxReps"]) {
+    } else if (
+      !isNewWorkoutCardio &&
+      newWorkout["minReps"] > newWorkout["maxReps"]
+    ) {
       alert("Please select valid rep range");
-    } else {
+    } else if (!isNewWorkoutCardio) {
       // create new array from selectedMuscles
       const cleanedSelectedMuscles = selectedMuscles.map(
         (muscle) => muscle.value
       );
       // add selectedMuscles to newWorkout
-      // add newWorkout to newDayWorkouts
-      setNewDayWorkouts([
-        ...newDayWorkouts,
-        { ...newWorkout, muscles: cleanedSelectedMuscles },
-      ]);
+      // add newWorkout to newDay
+      setNewDay({
+        ...newDay,
+        workoutsNeeded: [
+          ...newDay.workoutsNeeded,
+          { ...newWorkout, musclesWorked: cleanedSelectedMuscles },
+        ],
+      });
       // clear selectedMuscles
       setSelectedMuscles([]);
       // clear newWorkout
@@ -71,70 +86,103 @@ export const CreateWorkout = () => {
         weight: 0,
         minReps: 0,
         maxReps: 0,
+        sets: 0,
         notes: "",
-        muscles: [],
+        musclesWorked: [],
       });
       // close modal
       setShowWorkoutForm(!showWorkoutForm);
+    } else {
+      console.log("cardio");
     }
   };
 
-  /*
-    I can instead have the list of workouts shown under Day Name input with
-    Bootstrap ListGroup and have a button that says (add new workout to day).
-    Then the onClick of it opens a Modal with the form then the onSubmit adds
-    this new workout to the ListGroup state
-  */
-
+  console.log(newWorkout, newDay);
   return (
-    <div className="d-block pt-5">
+    <div className="d-block py-5">
       <BackArrow onClick={() => goBackToSelectProgram()} />
-      <h2 className="fw-bold mb-4">Create New Program</h2>
-      <div className="col-8 mx-auto maxWidth text-start mb-3">
-        <label htmlFor="programName" className="form-label fw-bold">
-          Program Name
-        </label>
-        <input
-          className="form-control TransparentInput white"
-          id="programName"
-          required
-          aria-describedby="programNameHelp"
-        />
-      </div>
-      <div className="mx-auto formContainer my-5 py-5">
-        <h2 className="mb-3">Create Program Day</h2>
-        <div className="col-8 mx-auto maxWidth text-start mb-3">
-          <label htmlFor="dayName" className="form-label fw-bold">
-            Day Name
+
+      <div className="mx-auto text-start programHeader py-5">
+        <h2 className="fw-bold mb-4 text-center">Create New Program</h2>
+        <div className="col-8 mx-auto maxWidth text-start">
+          <label htmlFor="programName" className="form-label">
+            Program Name
           </label>
           <input
             className="form-control TransparentInput white"
-            id="dayName"
+            id="programName"
             required
-            aria-describedby="dayNameHelp"
+            aria-describedby="programNameHelp"
+          />
+        </div>
+      </div>
+      <div className="mx-auto dayContainer my-3 py-5">
+        <h2 className="mb-3">Create Program Day</h2>
+        <div className="col-8 mx-auto maxWidth text-start mb-3">
+          <label htmlFor="restDuration" className="form-label">
+            Resting Period (Mins)
+          </label>
+          <input
+            className="form-control TransparentInput white"
+            id="restDuration"
+            required
+            type="number"
+            step={0.01}
+            pattern="[0-9]*"
+            inputMode="numeric"
+            onChange={(e) =>
+              setNewDay({
+                ...newDay,
+                restDuration: Number(e.target.value) * SECS,
+              })
+            }
+            aria-describedby="restDurationHelp"
           />
         </div>
         <h3 className="mt-5 mb-3">Workouts Added</h3>
         {/* TODO: add maxHeight here and make it scrollable */}
-        <ListGroup className="w-75 mx-auto mb-5 maxWidth">
-          {newDayWorkouts.length === 0 ? (
+        <ListGroup className="w-75 mx-auto mb-5 maxWidth workoutsAddedContainer">
+          {[...newDay.cardio, ...newDay.workoutsNeeded].length === 0 ? (
             <h5 className="grey">No Workouts Added Yet</h5>
           ) : (
-            newDayWorkouts.map((workout) => {
+            [...newDay.cardio, ...newDay.workoutsNeeded].map((workout) => {
               return (
                 <ListGroup.Item
                   as="li"
                   key={workout.name}
-                  className="d-flex align-items-start justify-content-between"
+                  className="d-flex align-items-start"
                 >
-                  <div className="ms-2 d-flex flex-column">
-                    <div className="fw-bold d-flex">{workout.name}</div>
-                    <div className="d-flex">
-                      Reps: {workout.minReps} - {workout.maxReps}
+                  <div className="ms-1 d-flex w-100">
+                    <div className="col-6">
+                      <div className="fw-bold d-flex justify-content-center">
+                        {workout.name}
+                      </div>
+                      <FiEdit className="back-hover mt-2" size={18} />
                     </div>
-                    <div className="d-flex">Weight: {workout.weight} lbs</div>
+                    <div className="col-6">
+                      {workout?.sets ? (
+                        <>
+                          <div className="d-flex">
+                            <span className="pink"> Sets </span>:
+                            {" " + workout.sets + " "}
+                          </div>
+                          <div className="d-flex">
+                            <span className="pink">Reps</span>:{" "}
+                            {workout.minReps} - {workout.maxReps}
+                          </div>
+                          <div className="d-flex">
+                            <span className="pink">Weight</span>:{" "}
+                            {workout.weight} lbs
+                          </div>
+                        </>
+                      ) : (
+                        <div className="d-flex">
+                          <span className="pink">Duration</span>:{" "}
+                          {workout.duration} mins
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <FiEdit className="back-hover" size={20} />
                 </ListGroup.Item>
               );
             })
@@ -163,10 +211,10 @@ export const CreateWorkout = () => {
         centered
       >
         <Modal.Header className="justify-content-center">
-          <Modal.Title>Add Workout</Modal.Title>
+          <Modal.Title>New Workout</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form className="col-10 mx-auto maxWidth mb-3 d-flex justify-content-center">
+          <Form className="col-10 mx-auto maxWidth mb-2 d-flex justify-content-center">
             <Form.Check
               checked={!isNewWorkoutCardio}
               inline
@@ -175,6 +223,7 @@ export const CreateWorkout = () => {
               name="type"
               id="weights"
               type="radio"
+              readOnly
             />
             <Form.Check
               inline
@@ -184,10 +233,11 @@ export const CreateWorkout = () => {
               id="cardio"
               name="type"
               type="radio"
+              readOnly
             />
           </Form>
-          <div className="col-10 mx-auto maxWidth text-start mb-3">
-            <label htmlFor="dayName" className="form-label">
+          <div className="col-10 mx-auto maxWidth text-start mb-2">
+            <label htmlFor="workoutName" className="form-label">
               Workout Name
             </label>
             <input
@@ -203,7 +253,7 @@ export const CreateWorkout = () => {
           </div>
 
           {isNewWorkoutCardio ? (
-            <div className="col-10 mx-auto maxWidth text-start mb-3">
+            <div className="col-10 mx-auto maxWidth text-start mb-2">
               <label htmlFor="duration" className="form-label">
                 Cardio Duration (mins)
               </label>
@@ -221,7 +271,7 @@ export const CreateWorkout = () => {
             </div>
           ) : (
             <>
-              <div className="col-10 mx-auto maxWidth text-start mb-3">
+              <div className="col-10 mx-auto maxWidth text-start mb-2">
                 <label htmlFor="weight" className="form-label">
                   Weight (lbs)
                 </label>
@@ -242,7 +292,7 @@ export const CreateWorkout = () => {
                   aria-describedby="weightHelp"
                 />
               </div>
-              <div className="col-10 mx-auto text-start maxWidth mb-3">
+              <div className="col-10 mx-auto text-start maxWidth mb-2">
                 <label htmlFor="minReps" className="form-label">
                   Minimum Reps
                 </label>
@@ -263,7 +313,7 @@ export const CreateWorkout = () => {
                   aria-describedby="minRepsHelp"
                 />
               </div>
-              <div className="col-10 mx-auto maxWidth text-start mb-3">
+              <div className="col-10 mx-auto maxWidth text-start mb-2">
                 <label htmlFor="maxReps" className="form-label">
                   Maximum Reps
                 </label>
@@ -284,9 +334,30 @@ export const CreateWorkout = () => {
                   aria-describedby="maxRepsHelp"
                 />
               </div>
+              <div className="col-10 mx-auto maxWidth text-start mb-2">
+                <label htmlFor="numSets" className="form-label">
+                  Number of Sets
+                </label>
+                <input
+                  className="form-control TransparentInput black"
+                  id="numSets"
+                  required
+                  type="number"
+                  step={0.01}
+                  pattern="[0-9]*"
+                  inputMode="numeric"
+                  onChange={(e) =>
+                    setNewWorkout({
+                      ...newWorkout,
+                      sets: Number(e.target.value),
+                    })
+                  }
+                  aria-describedby="numSetsHelp"
+                />
+              </div>
             </>
           )}
-          <div className="col-10 mx-auto maxWidth text-start mb-3">
+          <div className="col-10 mx-auto maxWidth text-start mb-2">
             <label htmlFor="notes" className="form-label">
               Notes
             </label>
@@ -322,10 +393,8 @@ export const CreateWorkout = () => {
           <CustButton onClick={() => toggleWorkoutFormModal()} text="Cancel" />
         </Modal.Footer>
       </Modal>
-      {/* button to create a new day */}
-      {/* button to finish make post request and send user back */}
-      {/* form that asks user input for workout needed */}
       {/* caurosel holding newly created Tiles (dayInfo) */}
+      {/* button to finish make post request and send user back */}
     </div>
   );
 };

@@ -17,7 +17,6 @@ const programSchema = new Schema({
         index: true
     },
     days: [{
-        id: Number,
         restDuration: {
             type: Number,
             required: true
@@ -36,28 +35,25 @@ const programSchema = new Schema({
             }
         }],
         workoutsNeeded: [{
-            id: Number,
-            workoutName: {
+            name: {
                 type: String,
                 required: true
             },
-            goal: {
-                sets: {
-                    type: Number,
-                    required: true
-                },
-                weight: {
-                    type: Number,
-                    required: true
-                },
-                minReps: {
-                    type: Number,
-                    required: true
-                },
-                maxReps: {
-                    type: Number,
-                    required: true
-                },
+            sets: {
+                type: Number,
+                required: true
+            },
+            weight: {
+                type: Number,
+                required: true
+            },
+            minReps: {
+                type: Number,
+                required: true
+            },
+            maxReps: {
+                type: Number,
+                required: true
             },
             musclesWorked: [String],
             notes: String
