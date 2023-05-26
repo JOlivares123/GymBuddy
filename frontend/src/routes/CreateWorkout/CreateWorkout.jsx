@@ -37,6 +37,11 @@ export const CreateWorkout = () => {
     notes: "",
     musclesWorked: [],
   });
+  const [newCardio, setNewCardio] = useState({
+    name: "",
+    duration: 0,
+    notes: "",
+  });
   const [isNewWorkoutCardio, setIsNewWorkoutCardio] = useState(false);
 
   const toggleWorkoutFormModal = () => {
@@ -48,7 +53,19 @@ export const CreateWorkout = () => {
   };
 
   const onAddCardio = () => {
-    console.log("add cardio");
+    if (newCardio["name"].length === 0 || newCardio["duration"] === 0) {
+      alert("Please fill in entire form");
+    } else {
+      setNewDay({ ...newDay, cardio: [...newDay.cardio, newCardio] });
+      // reset cardio obj
+      setNewCardio({
+        name: "",
+        duration: 0,
+        notes: "",
+      });
+      // close modal
+      setShowWorkoutForm(!showWorkoutForm);
+    }
   };
   const onAddWorkout = () => {
     // check that form is valid (minReps < maxReps + nonEmpty)
@@ -101,7 +118,7 @@ export const CreateWorkout = () => {
       onAddCardio();
     }
   };
-  console.log(newWorkout, newDay);
+
   return (
     <div className="d-block py-5">
       <BackArrow onClick={() => goBackToSelectProgram()} />
@@ -248,10 +265,16 @@ export const CreateWorkout = () => {
               className="form-control TransparentInput black"
               id="workoutName"
               required
-              value={newWorkout["name"]}
-              onChange={(e) =>
-                setNewWorkout({ ...newWorkout, name: e.target.value })
+              value={
+                !isNewWorkoutCardio ? newWorkout["name"] : newCardio["name"]
               }
+              onChange={(e) => {
+                if (!isNewWorkoutCardio) {
+                  setNewWorkout({ ...newWorkout, name: e.target.value });
+                } else {
+                  setNewCardio({ ...newCardio, name: e.target.value });
+                }
+              }}
               aria-describedby="workoutNameHelp"
             />
           </div>
@@ -269,7 +292,12 @@ export const CreateWorkout = () => {
                 step={0.01}
                 pattern="[0-9]*"
                 inputMode="numeric"
-                onChange={(e) => console.log(Number(e.target.value))}
+                onChange={(e) =>
+                  setNewCardio({
+                    ...newCardio,
+                    duration: Number(e.target.value),
+                  })
+                }
                 aria-describedby="weightHelp"
               />
             </div>
@@ -359,6 +387,18 @@ export const CreateWorkout = () => {
                   aria-describedby="numSetsHelp"
                 />
               </div>
+              <div className="text-start col-10 mx-auto mb-1 maxWidth">
+                <label htmlFor="MultiSelect" className="form-label">
+                  Muscles Worked
+                </label>
+                <MultiSelect
+                  hasSelectAll={false}
+                  value={selectedMuscles}
+                  onChange={setSelectedMuscles}
+                  options={MUSCLE_DATA}
+                  labelledBy="Muscles"
+                />
+              </div>
             </>
           )}
           <div className="col-10 mx-auto maxWidth text-start mb-2">
@@ -368,23 +408,17 @@ export const CreateWorkout = () => {
             <input
               className="form-control TransparentInput black"
               id="notes"
-              value={newWorkout["notes"]}
-              onChange={(e) =>
-                setNewWorkout({ ...newWorkout, notes: e.target.value })
+              value={
+                !isNewWorkoutCardio ? newWorkout["notes"] : newCardio["notes"]
               }
+              onChange={(e) => {
+                if (!isNewWorkoutCardio) {
+                  setNewWorkout({ ...newWorkout, notes: e.target.value });
+                } else {
+                  setNewCardio({ ...newCardio, notes: e.target.value });
+                }
+              }}
               aria-describedby="notesHelp"
-            />
-          </div>
-          <div className="text-start col-10 mx-auto mb-1 maxWidth">
-            <label htmlFor="MultiSelect" className="form-label">
-              Muscles Worked
-            </label>
-            <MultiSelect
-              hasSelectAll={false}
-              value={selectedMuscles}
-              onChange={setSelectedMuscles}
-              options={MUSCLE_DATA}
-              labelledBy="Muscles"
             />
           </div>
         </Modal.Body>
