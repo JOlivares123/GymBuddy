@@ -18,7 +18,7 @@ export const data = {
             {
               workout_name: "Incline Bench Press Machine",
               goal: {
-                weight: 130,
+                weight: 135,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
@@ -29,7 +29,7 @@ export const data = {
             {
               workout_name: "Neutral Bench Press Machine",
               goal: {
-                weight: 170,
+                weight: 180,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
@@ -38,19 +38,29 @@ export const data = {
               muscles_worked: ["Chest"],
             },
             {
-              workout_name: "Cable Upper Back Pulldown",
+              workout_name: "Cable Upper Back Row",
               goal: {
-                weight: 143,
+                weight: 123,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes:
-                "- superset with 121lbs \n- neutral grip bar\n- bring elbows outwards first then down",
+              notes: "- elbows out and pull to sternum with neutral grip bar",
               muscles_worked: ["Upper Back"],
             },
             {
-              workout_name: "Cable Lat Pulldown",
+              workout_name: "Cable Low Lat Pulldown",
+              goal: {
+                weight: 120,
+                sets: 2,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes: "- hands with narrow grip",
+              muscles_worked: ["Lats"],
+            },
+            {
+              workout_name: "Cable Upper Lat Pulldown",
               goal: {
                 weight: 120,
                 sets: 3,
@@ -58,14 +68,20 @@ export const data = {
                 max_reps: 8,
               },
               notes:
-                "- long bar\n- body straight up and hands on outer edge of bar",
+                "- long bar\n- body straight up and hands on outer edge of bar \n-wide grip with long bar",
               muscles_worked: ["Lats"],
             },
+          ],
+        },
+        // shoulder + glute
+        {
+          id: 1293,
+          workouts_needed: [
             {
               workout_name: "Shoulder Press - front",
               goal: {
                 weight: 55,
-                sets: 2,
+                sets: 3,
                 min_reps: 5,
                 max_reps: 8,
               },
@@ -83,6 +99,28 @@ export const data = {
               notes: "- cables @ 2",
               muscles_worked: ["Shoulder"],
             },
+            {
+              workout_name: "rear delt cable fly",
+              goal: {
+                weight: 120,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 9,
+              },
+              notes: null,
+              muscles_worked: ["Shoulder"],
+            },
+            {
+              workout_name: "Single Leg Press - Glute biased",
+              goal: {
+                weight: 220,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes: "booty to back of seat and one leg on the floor",
+              muscles_worked: ["Glutes"],
+            },
           ],
         },
         // arms
@@ -98,69 +136,48 @@ export const data = {
             {
               workout_name: "single crossbody tricep extension",
               goal: {
-                weight: 27.5,
-                sets: 3,
-                min_reps: 6,
-                max_reps: 8,
-              },
-              notes: "- do assisted ones to help push\n- cable @ 15",
-              muscles_worked: ["Tricep"],
-            },
-            {
-              workout_name: "single tricep push down",
-              goal: {
-                weight: 27.5,
-                sets: 3,
-                min_reps: 6,
-                max_reps: 8,
-              },
-              notes: "- cable @ 15",
-              muscles_worked: ["Tricep"],
-            },
-            {
-              workout_name: "Cable faceaway bicep curl",
-              goal: {
                 weight: 30,
-                sets: 3,
-                min_reps: 6,
-                max_reps: 9,
-              },
-              notes: "- cable @ 2",
-              muscles_worked: ["Bicep"],
-            },
-            {
-              workout_name: "Dumbbell hammer curl",
-              goal: {
-                weight: 32.5,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
               notes:
-                "- chest up and elbow in front of delt and lean forward a bit",
-              muscles_worked: ["Bicep"],
+                "- do assisted ones to help push\n- cable @ 15 \n use single cable",
+              muscles_worked: ["Tricep"],
             },
             {
-              workout_name: "Spider curl machine",
+              workout_name: "overhead tricep extension",
               goal: {
-                weight: 70,
-                sets: 2,
+                weight: 65,
+                sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "- seat @4",
-              muscles_worked: ["Bicep"],
+              notes: "- cable @ 10 and drop down to 60lbs",
+              muscles_worked: ["Tricep"],
             },
             {
-              workout_name: "bent over rear delt cable fly",
+              workout_name: "Cable faceaway bicep ez curl",
               goal: {
-                weight: 20,
+                weight: 70,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 9,
               },
-              notes: "cable @ 3",
-              muscles_worked: ["Shoulder"],
+              notes: "- cable @ 0 & drop down to 65",
+              muscles_worked: ["Bicep"],
+            },
+            {
+              workout_name: "cable hammer curl",
+              goal: {
+                weight: 60,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes:
+                "- chest up and elbow in front of delt and lean forward a bit & cable @ 0",
+              muscles_worked: ["Bicep"],
             },
           ],
         },
@@ -175,25 +192,27 @@ export const data = {
           },
           workouts_needed: [
             {
-              workout_name: "dumbbell RDL",
+              workout_name: "dumbbell/barbell RDL",
               goal: {
-                weight: 180,
-                sets: 2,
+                weight: 195,
+                sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: null,
+              notes:
+                "Brace (hold breath at top) then plant feet into ground then push butt out",
               muscles_worked: ["Hamstrings", "Glutes"],
             },
             {
               workout_name: "Hack Squat",
               goal: {
-                weight: 230,
+                weight: 130,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 9,
               },
-              notes: "go deep and hold at bottom",
+              notes:
+                "go deep and hold at bottom. Push lower back to seat and brace (hold breath)",
               muscles_worked: ["Quads", "Glutes"],
             },
             {
@@ -219,15 +238,15 @@ export const data = {
               muscles_worked: ["Hamstrings"],
             },
             {
-              workout_name: "Hip Abductor machine",
+              workout_name: "Single Leg Press - Glute biased",
               goal: {
-                weight: 150,
-                sets: 2,
+                weight: 220,
+                sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: null,
-              muscles_worked: ["Abductors"],
+              notes: "booty to back of seat and one leg on the floor",
+              muscles_worked: ["Glutes"],
             },
             {
               workout_name: "Calf Press",
