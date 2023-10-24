@@ -49,26 +49,27 @@ export const data = {
               muscles_worked: ["Upper Back"],
             },
             {
-              workout_name: "Cable Low Lat Pulldown",
+              workout_name: "Cable Upper Lat Row",
               goal: {
-                weight: 120,
+                weight: 110,
                 sets: 2,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "- hands with narrow grip",
+              notes:
+                "- hands with neutral grip and push elbows and hands down to floor",
               muscles_worked: ["Lats"],
             },
             {
-              workout_name: "Cable Upper Lat Pulldown",
+              workout_name: "Cable Low Lat Pulldown",
               goal: {
-                weight: 120,
+                weight: 100,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
               notes:
-                "- long bar\n- body straight up and hands on outer edge of bar \n-wide grip with long bar",
+                "- long bar\n- body straight up and hands on outer edge of bar \n- pull elbows to top of hips",
               muscles_worked: ["Lats"],
             },
           ],
@@ -118,7 +119,8 @@ export const data = {
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "booty to back of seat and one leg on the floor",
+              notes:
+                "booty to back of seat and one leg on the floor and leg on bottom/top of plat (dont allow knee to bend too much)",
               muscles_worked: ["Glutes"],
             },
           ],
