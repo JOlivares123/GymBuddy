@@ -18,12 +18,12 @@ export const data = {
             {
               workout_name: "Incline Bench Press Machine",
               goal: {
-                weight: 135,
+                weight: 140,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "legs @ 8 \n arms @ 4",
+              notes: "legs @ 8 \n arms @ 4 OR bench on 4th hole from top",
               muscles_worked: ["Chest"],
             },
             {
@@ -34,13 +34,13 @@ export const data = {
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "legs @ 10 \n arms @ 5",
+              notes: "legs @ 10 \n arms @ 5 OR flat bench use 140",
               muscles_worked: ["Chest"],
             },
             {
               workout_name: "Cable Upper Back Row",
               goal: {
-                weight: 123,
+                weight: 110,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
@@ -51,8 +51,8 @@ export const data = {
             {
               workout_name: "Cable Upper Lat Row",
               goal: {
-                weight: 110,
-                sets: 2,
+                weight: 90,
+                sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
@@ -63,7 +63,7 @@ export const data = {
             {
               workout_name: "Cable Low Lat Pulldown",
               goal: {
-                weight: 100,
+                weight: 120,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
