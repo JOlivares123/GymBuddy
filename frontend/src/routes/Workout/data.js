@@ -23,13 +23,13 @@ export const data = {
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "legs @ 8 \n arms @ 4 OR bench on 4th hole from top",
+              notes: "legs @ 4 \n arms @ 2 OR bench on 4th hole from top",
               muscles_worked: ["Chest"],
             },
             {
               workout_name: "Neutral Bench Press Machine",
               goal: {
-                weight: 180,
+                weight: 175,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
@@ -49,15 +49,15 @@ export const data = {
               muscles_worked: ["Upper Back"],
             },
             {
-              workout_name: "Cable Upper Lat Row",
+              workout_name: "Cable Upper Lat Row Machine",
               goal: {
-                weight: 90,
+                weight: 110,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
               notes:
-                "- hands with neutral grip and push elbows and hands down to floor",
+                "-chest @5 and legs @6 (these numbers show) \n- hands with neutral grip and push elbows and hands down to floor",
               muscles_worked: ["Lats"],
             },
             {
@@ -79,14 +79,14 @@ export const data = {
           id: 1293,
           workouts_needed: [
             {
-              workout_name: "Shoulder Press - front",
+              workout_name: "Shoulder Press Machine - front",
               goal: {
-                weight: 55,
+                weight: 80,
                 sets: 3,
                 min_reps: 5,
                 max_reps: 8,
               },
-              notes: null,
+              notes: "legs @ 7 and arms @ 6",
               muscles_worked: ["Shoulder"],
             },
             {
@@ -108,19 +108,19 @@ export const data = {
                 min_reps: 6,
                 max_reps: 9,
               },
-              notes: null,
+              notes: "legs @ 6",
               muscles_worked: ["Shoulder"],
             },
             {
-              workout_name: "Single Leg Press - Glute biased",
+              workout_name: "Hip Thrust",
               goal: {
-                weight: 220,
+                weight: 50,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
               notes:
-                "booty to back of seat and one leg on the floor and leg on bottom/top of plat (dont allow knee to bend too much)",
+                "do lunge stretches and butterfly steches before. Plus do hip machines as well (inner: 110lbs + outer: 80lbs)",
               muscles_worked: ["Glutes"],
             },
           ],
@@ -136,32 +136,20 @@ export const data = {
           },
           workouts_needed: [
             {
-              workout_name: "single crossbody tricep extension",
+              workout_name: "Tricep Mechanical Dropset",
               goal: {
-                weight: 30,
+                weight: 44,
                 sets: 3,
                 min_reps: 6,
-                max_reps: 8,
+                max_reps: 9,
               },
-              notes:
-                "- do assisted ones to help push\n- cable @ 15 \n use single cable",
-              muscles_worked: ["Tricep"],
+              notes: "- cable @ 17; 1st @ 44lbs, 2nd @38.5, 3rd @ 38.5",
+              muscles_worked: ["Bicep"],
             },
             {
-              workout_name: "overhead tricep extension",
+              workout_name: "Bicep Curl Machine",
               goal: {
-                weight: 65,
-                sets: 3,
-                min_reps: 6,
-                max_reps: 8,
-              },
-              notes: "- cable @ 10 and drop down to 60lbs",
-              muscles_worked: ["Tricep"],
-            },
-            {
-              workout_name: "Cable faceaway bicep ez curl",
-              goal: {
-                weight: 70,
+                weight: 50,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 9,
@@ -170,15 +158,14 @@ export const data = {
               muscles_worked: ["Bicep"],
             },
             {
-              workout_name: "cable hammer curl",
+              workout_name: "Bicep hammer curl machine",
               goal: {
-                weight: 60,
+                weight: 40,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes:
-                "- chest up and elbow in front of delt and lean forward a bit & cable @ 0",
+              notes: "- arms on outer edge and pull towards inside",
               muscles_worked: ["Bicep"],
             },
           ],
@@ -202,13 +189,13 @@ export const data = {
                 max_reps: 8,
               },
               notes:
-                "Brace (hold breath at top) then plant feet into ground then push butt out",
+                "Brace (hold breath at top) then plant feet into ground (all 3 points) then push butt out. Do 100lbs to get form better",
               muscles_worked: ["Hamstrings", "Glutes"],
             },
             {
               workout_name: "Hack Squat",
               goal: {
-                weight: 130,
+                weight: 100,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 9,
@@ -231,29 +218,30 @@ export const data = {
             {
               workout_name: "hamstring curl",
               goal: {
-                weight: 240,
+                weight: 140,
                 sets: 2,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: null,
+              notes: "legs @ 4 and back @3",
               muscles_worked: ["Hamstrings"],
             },
             {
-              workout_name: "Single Leg Press - Glute biased",
+              workout_name: "Hip Thrust",
               goal: {
-                weight: 220,
+                weight: 50,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "booty to back of seat and one leg on the floor",
+              notes:
+                "do lunge stretches and butterfly steches before. Plus do hip machines as well (inner: 110lbs + outer: 80lbs)",
               muscles_worked: ["Glutes"],
             },
             {
               workout_name: "Calf Press",
               goal: {
-                weight: 215,
+                weight: 145,
                 sets: 2,
                 min_reps: 6,
                 max_reps: 8,
@@ -734,3 +722,27 @@ export const data = {
     },
   ],
 };
+
+// {
+//   workout_name: "single crossbody tricep extension",
+//   goal: {
+//     weight: 30,
+//     sets: 3,
+//     min_reps: 6,
+//     max_reps: 8,
+//   },
+//   notes:
+//     "- do assisted ones to help push\n- cable @ 15 \n use single cable",
+//   muscles_worked: ["Tricep"],
+// },
+// {
+//   workout_name: "overhead tricep extension",
+//   goal: {
+//     weight: 65,
+//     sets: 3,
+//     min_reps: 6,
+//     max_reps: 8,
+//   },
+//   notes: "- cable @ 10 and drop down to 60lbs",
+//   muscles_worked: ["Tricep"],
+// },
