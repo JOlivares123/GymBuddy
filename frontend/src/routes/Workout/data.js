@@ -38,9 +38,9 @@ export const data = {
               muscles_worked: ["Chest"],
             },
             {
-              workout_name: "Cable Upper Back Row",
+              workout_name: "Cable Upper Back Pulldown",
               goal: {
-                weight: 110,
+                weight: 120,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
@@ -63,7 +63,7 @@ export const data = {
             {
               workout_name: "Cable Low Lat Pulldown",
               goal: {
-                weight: 120,
+                weight: 130,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
@@ -114,13 +114,13 @@ export const data = {
             {
               workout_name: "Hip Thrust",
               goal: {
-                weight: 50,
+                weight: 80,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
               notes:
-                "do lunge stretches and butterfly steches before. Plus do hip machines as well (inner: 110lbs + outer: 80lbs)",
+                "do lunge stretches and butterfly steches before. Plus do hip machines as well (inner: 110lbs + outer: 80lbs). Can do 100lbs",
               muscles_worked: ["Glutes"],
             },
           ],
@@ -138,34 +138,34 @@ export const data = {
             {
               workout_name: "Tricep Mechanical Dropset",
               goal: {
-                weight: 44,
+                weight: 49,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 9,
               },
-              notes: "- cable @ 17; 1st @ 44lbs, 2nd @38.5, 3rd @ 38.5",
-              muscles_worked: ["Bicep"],
+              notes: "- cable @ 17; 1st @ 49lbs, 2nd @43, 3rd @ 43",
+              muscles_worked: ["Tricep"],
             },
             {
               workout_name: "Bicep Curl Machine",
               goal: {
-                weight: 50,
+                weight: 60,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 9,
               },
-              notes: "- cable @ 0 & drop down to 65",
+              notes: "- seat @5",
               muscles_worked: ["Bicep"],
             },
             {
               workout_name: "Bicep hammer curl machine",
               goal: {
-                weight: 40,
+                weight: 50,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "- arms on outer edge and pull towards inside",
+              notes: "- arms on outer edge and pull towards inside. Seat @5",
               muscles_worked: ["Bicep"],
             },
           ],
@@ -229,7 +229,7 @@ export const data = {
             {
               workout_name: "Hip Thrust",
               goal: {
-                weight: 50,
+                weight: 100,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
