@@ -80,7 +80,7 @@ export const data = {
             {
               workout_name: "Shoulder Press Machine - front",
               goal: {
-                weight: 82.5
+                weight: 82.5,
                 sets: 3,
                 min_reps: 5,
                 max_reps: 8,
