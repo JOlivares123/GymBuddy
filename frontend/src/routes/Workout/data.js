@@ -38,9 +38,9 @@ export const data = {
               muscles_worked: ["Chest"],
             },
             {
-              workout_name: "Cable Upper Back Pulldown",
+              workout_name: "Cable Upper Back Row",
               goal: {
-                weight: 120,
+                weight: 110,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
@@ -49,28 +49,27 @@ export const data = {
               muscles_worked: ["Upper Back"],
             },
             {
-              workout_name: "Cable Upper Lat Row Machine",
+              workout_name: "Single Hand Cable Lat Pulldown",
               goal: {
-                weight: 110,
+                weight: 60,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
               notes:
                 "-chest @5 and legs @6 (these numbers show) \n- hands with neutral grip and push elbows and hands down to floor",
-              muscles_worked: ["Lats"],
+              muscles_worked: ["Upper Lats"],
             },
             {
-              workout_name: "Cable Low Lat Pulldown",
+              workout_name: "Cable Lat Pullover",
               goal: {
-                weight: 130,
+                weight: 40,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes:
-                "- long bar\n- body straight up and hands on outer edge of bar \n- pull elbows to top of hips",
-              muscles_worked: ["Lats"],
+              notes: "- cable @18",
+              muscles_worked: ["Lower Lats"],
             },
           ],
         },
@@ -81,7 +80,7 @@ export const data = {
             {
               workout_name: "Shoulder Press Machine - front",
               goal: {
-                weight: 80,
+                weight: 82.5
                 sets: 3,
                 min_reps: 5,
                 max_reps: 8,
@@ -92,7 +91,7 @@ export const data = {
             {
               workout_name: "cable side shoulder raise",
               goal: {
-                weight: 15,
+                weight: 20,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 9,
@@ -166,6 +165,17 @@ export const data = {
                 max_reps: 8,
               },
               notes: "- arms on outer edge and pull towards inside. Seat @5",
+              muscles_worked: ["Bicep"],
+            },
+            {
+              workout_name: "Bayesian Curl",
+              goal: {
+                weight: 30,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes: "- cable @ 0",
               muscles_worked: ["Bicep"],
             },
           ],

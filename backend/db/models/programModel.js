@@ -16,12 +16,12 @@ const programSchema = new Schema({
         required: true,
         index: true
     },
+    restDuration: {
+        type: Number,
+        required: true
+    },
     days: [{
-        restDuration: {
-            type: Number,
-            required: true
-        },
-        cardio: [{
+        cardio: {
             name: {
                 type: String,
                 required: true,
@@ -33,9 +33,9 @@ const programSchema = new Schema({
             notes: {
                 type: String
             }
-        }],
+        },
         workoutsNeeded: [{
-            name: {
+            workoutName: {
                 type: String,
                 required: true
             },

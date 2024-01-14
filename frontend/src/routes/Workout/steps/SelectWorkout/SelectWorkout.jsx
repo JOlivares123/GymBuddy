@@ -96,7 +96,7 @@ export const SelectWorkout = ({
               // introduce a timeout in order for the confetti effect
               // to happen + congratulate the user
               // TODO: remove this navigate and just reset workout flow state to first step
-              navigate("/home");
+              navigate("/workout");
             }, [3000]);
           }}
           className="btn-lg col-8 col-sm-6 col-md-6 col-lg-6 col-xl-6"
