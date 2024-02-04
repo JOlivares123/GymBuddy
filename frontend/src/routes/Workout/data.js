@@ -1,6 +1,244 @@
 export const data = {
   programs: [
     {
+      id: 0,
+      // 3 mins in secs
+      rest_duration: 180,
+      name: "Rehab",
+      days: [
+        {
+          id: 110,
+          cardio: {
+            name: "incline treadmill",
+            // 10 mins in secs
+            duration: 600,
+            notes: "13 degrees incline at 2.5 speed",
+          },
+          workouts_needed: [
+            {
+              workout_name: "Incline Bench Press Machine",
+              goal: {
+                weight: 120,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes: "legs @ 4 \n arms @ 2 OR bench on 4th hole from top",
+              muscles_worked: ["Chest"],
+            },
+            {
+              workout_name: "Neutral Bench Press Machine",
+              goal: {
+                weight: 145,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes: "legs @ 10 \n arms @ 5 OR flat bench use 140",
+              muscles_worked: ["Chest"],
+            },
+            {
+              workout_name: "Cable Upper Back Row",
+              goal: {
+                weight: 90,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes: "- elbows out and pull to sternum with neutral grip bar",
+              muscles_worked: ["Upper Back"],
+            },
+            {
+              workout_name: "Single Hand Cable Lat Pulldown",
+              goal: {
+                weight: 60,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes:
+                "-chest @5 and legs @6 (these numbers show) \n- hands with neutral grip and push elbows and hands down to floor",
+              muscles_worked: ["Upper Lats"],
+            },
+            {
+              workout_name: "Cable Lat Pullover",
+              goal: {
+                weight: 44,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes: "- cable @18",
+              muscles_worked: ["Lower Lats"],
+            },
+          ],
+        },
+        // shoulder + glute
+        {
+          id: 1293,
+          workouts_needed: [
+            {
+              workout_name: "Shoulder Press Machine - front",
+              goal: {
+                weight: 60,
+                sets: 3,
+                min_reps: 5,
+                max_reps: 8,
+              },
+              notes: "legs @ 7 and arms @ 6",
+              muscles_worked: ["Shoulder"],
+            },
+            {
+              workout_name: "cable side shoulder raise",
+              goal: {
+                weight: 12.5,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 9,
+              },
+              notes: "- cables @ 2",
+              muscles_worked: ["Shoulder"],
+            },
+            {
+              workout_name: "rear delt cable fly",
+              goal: {
+                weight: 110,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 9,
+              },
+              notes: "legs @ 6",
+              muscles_worked: ["Shoulder"],
+            },
+            {
+              workout_name: "Cable Hip abduction",
+              goal: {
+                weight: 16,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes: "keep foot straight and lead with the heel",
+              muscles_worked: ["Glutes"],
+            },
+          ],
+        },
+        // arms
+        {
+          id: 113,
+          cardio: {
+            name: "incline treadmill",
+            // 10 mins in secs
+            duration: 600,
+            notes: "13 degrees incline at 2.5 speed",
+          },
+          workouts_needed: [
+            {
+              workout_name: "Tricep Mechanical Dropset",
+              goal: {
+                weight: 40,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 9,
+              },
+              notes: "- cable @ 17; 1st @ 40lbs, 2nd @40, 3rd @ 40",
+              muscles_worked: ["Tricep"],
+            },
+            {
+              workout_name: "Bicep Curl Machine",
+              goal: {
+                weight: 30,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 9,
+              },
+              notes: "- seat @5",
+              muscles_worked: ["Bicep"],
+            },
+            {
+              workout_name: "Bicep hammer curl machine",
+              goal: {
+                weight: 30,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes: "- arms on outer edge and pull towards inside. Seat @5",
+              muscles_worked: ["Bicep"],
+            },
+            {
+              workout_name: "Bayesian Curl",
+              goal: {
+                weight: 20,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes: "- cable @ 0",
+              muscles_worked: ["Bicep"],
+            },
+          ],
+        },
+        // legs
+        {
+          id: 114,
+          cardio: {
+            name: "incline treadmill",
+            // 10 mins in secs
+            duration: 600,
+            notes: "13 degrees incline at 2.5 speed",
+          },
+          workouts_needed: [
+            {
+              workout_name: "quad extension",
+              goal: {
+                weight: 100,
+                sets: 2,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes: null,
+              muscles_worked: ["Quads"],
+            },
+            {
+              workout_name: "Cable Hip abduction",
+              goal: {
+                weight: 16,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes: "keep foot straight and lead with the heel",
+              muscles_worked: ["Glutes"],
+            },
+            {
+              workout_name: "Hip Thrust",
+              goal: {
+                weight: 30,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes:
+                "do lunge stretches and butterfly steches before. Plus do hip machines as well (inner: 110lbs + outer: 80lbs)",
+              muscles_worked: ["Glutes"],
+            },
+            {
+              workout_name: "Calf Press",
+              goal: {
+                weight: 60,
+                sets: 2,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes: null,
+              muscles_worked: ["Calves"],
+            },
+          ],
+        },
+      ],
+    },
+    {
       id: 1,
       // 3 mins in secs
       rest_duration: 180,
