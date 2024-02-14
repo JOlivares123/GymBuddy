@@ -40,7 +40,7 @@ export const data = {
             {
               workout_name: "Cable Upper Back Row",
               goal: {
-                weight: 90,
+                weight: 99,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
@@ -63,7 +63,7 @@ export const data = {
             {
               workout_name: "Cable Lat Pullover",
               goal: {
-                weight: 44,
+                weight: 38,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
