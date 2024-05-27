@@ -18,7 +18,7 @@ export const data = {
             {
               workout_name: "Incline Bench Press Machine",
               goal: {
-                weight: 120,
+                weight: 130,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
@@ -29,29 +29,29 @@ export const data = {
             {
               workout_name: "Neutral Bench Press Machine",
               goal: {
-                weight: 145,
+                weight: 150,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "legs @ 10 \n arms @ 5 OR flat bench use 140",
+              notes: "legs @ 10 \n arms @ 6 OR flat bench use 140",
               muscles_worked: ["Chest"],
             },
             {
-              workout_name: "Cable Upper Back Row",
+              workout_name: "Cable Upper Back Pulldown",
               goal: {
-                weight: 99,
+                weight: 110,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "- elbows out and pull to sternum with neutral grip bar",
+              notes: "- pull with elbows and angled out.",
               muscles_worked: ["Upper Back"],
             },
             {
               workout_name: "Single Hand Cable Lat Pulldown",
               goal: {
-                weight: 60,
+                weight: 70,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
@@ -61,14 +61,15 @@ export const data = {
               muscles_worked: ["Upper Lats"],
             },
             {
-              workout_name: "Cable Lat Pullover",
+              workout_name: "Forward Bent Cable Row",
               goal: {
-                weight: 38,
+                weight: 55,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "- cable @18",
+              notes:
+                "use neutral grip attachment and pull elbows back and to the floor",
               muscles_worked: ["Lower Lats"],
             },
           ],
@@ -80,7 +81,7 @@ export const data = {
             {
               workout_name: "Shoulder Press Machine - front",
               goal: {
-                weight: 60,
+                weight: 80,
                 sets: 3,
                 min_reps: 5,
                 max_reps: 8,
@@ -91,7 +92,7 @@ export const data = {
             {
               workout_name: "cable side shoulder raise",
               goal: {
-                weight: 12.5,
+                weight: 18.5,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 9,
@@ -102,7 +103,7 @@ export const data = {
             {
               workout_name: "rear delt cable fly",
               goal: {
-                weight: 110,
+                weight: 130,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 9,
@@ -111,14 +112,14 @@ export const data = {
               muscles_worked: ["Shoulder"],
             },
             {
-              workout_name: "Cable Hip abduction",
+              workout_name: "Cable Squat",
               goal: {
-                weight: 16,
+                weight: 82,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "keep foot straight and lead with the heel",
+              notes: "ensure knees are out. Push with feet",
               muscles_worked: ["Glutes"],
             },
           ],
@@ -136,7 +137,7 @@ export const data = {
             {
               workout_name: "Tricep Mechanical Dropset",
               goal: {
-                weight: 40,
+                weight: 44,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 9,
@@ -147,34 +148,35 @@ export const data = {
             {
               workout_name: "Bicep Curl Machine",
               goal: {
-                weight: 30,
+                weight: 57.5,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 9,
               },
-              notes: "- seat @5",
+              notes: "- seat @7",
               muscles_worked: ["Bicep"],
             },
             {
               workout_name: "Bicep hammer curl machine",
               goal: {
-                weight: 30,
+                weight: 57.5,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "- arms on outer edge and pull towards inside. Seat @5",
+              notes: "- arms on outer edge and pull towards inside. Seat @7",
               muscles_worked: ["Bicep"],
             },
             {
               workout_name: "Bayesian Curl",
               goal: {
-                weight: 20,
+                weight: 27.5,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
-              notes: "- cable @ 0",
+              notes:
+                "- cable @ 0 and have elbows tucked and arm externally rotated",
               muscles_worked: ["Bicep"],
             },
           ],
@@ -193,7 +195,7 @@ export const data = {
               workout_name: "quad extension",
               goal: {
                 weight: 100,
-                sets: 2,
+                sets: 3,
                 min_reps: 6,
                 max_reps: 8,
               },
@@ -214,7 +216,7 @@ export const data = {
             {
               workout_name: "Hip Thrust",
               goal: {
-                weight: 30,
+                weight: 65,
                 sets: 3,
                 min_reps: 6,
                 max_reps: 8,
@@ -224,9 +226,30 @@ export const data = {
               muscles_worked: ["Glutes"],
             },
             {
+              workout_name: "Hip Abduction Machine",
+              goal: {
+                weight: 140,
+                sets: 2,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes: null,
+            },
+            {
+              workout_name: "Squats",
+              goal: {
+                weight: 82,
+                sets: 3,
+                min_reps: 6,
+                max_reps: 8,
+              },
+              notes: null,
+              muscles_worked: ["Glutes"],
+            },
+            {
               workout_name: "Calf Press",
               goal: {
-                weight: 60,
+                weight: 135,
                 sets: 2,
                 min_reps: 6,
                 max_reps: 8,
