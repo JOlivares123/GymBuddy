@@ -1,6 +1,304 @@
 export const data = {
   programs: [
     {
+      id: 200,
+      // 2.33 mins in secs
+      rest_duration: 140,
+      name: "Upper Lower",
+      days: [
+        {
+          id: 110,
+          workouts_needed: [
+            // Chest
+            {
+              workout_name: "Incline Dumbbell Bench Press",
+              goal: {
+                weight: 45,
+                sets: 4,
+                min_reps: 9,
+                max_reps: 15,
+              },
+              notes: "@ 4/5 & barbell - 15 reps",
+              muscles_worked: ["Chest"],
+            },
+            {
+              workout_name: "Neutral Bench Press Machine",
+              goal: {
+                weight: 120,
+                sets: 4,
+                min_reps: 10,
+                max_reps: 15,
+              },
+              notes: "legs @ 10 \n arms @ 1",
+              muscles_worked: ["Chest"],
+            },
+            {
+              workout_name: "Cable Lat Row",
+              goal: {
+                weight: 77,
+                sets: 4,
+                min_reps: 13,
+                max_reps: 15,
+              },
+              notes: null,
+              muscles_worked: ["Lats"],
+            },
+            // Back
+            {
+              workout_name: "Bicep Curls",
+              goal: {
+                weight: 20,
+                sets: 4,
+                min_reps: 15,
+                max_reps: 20,
+              },
+              notes: null,
+              muscles_worked: ["Biceps"],
+            },
+            {
+              workout_name: "Tricep Overhead Extension",
+              goal: {
+                weight: 16.5,
+                sets: 3,
+                min_reps: 13,
+                max_reps: 18,
+              },
+              notes: null,
+              muscles_worked: ["Triceps"],
+            },
+            {
+              workout_name: "Side Delt Raise Dumbbell ",
+              goal: {
+                weight: 15,
+                sets: 3,
+                min_reps: 9,
+                max_reps: 15,
+              },
+              notes: null,
+              muscles_worked: ["Side Delts"],
+            },
+          ],
+        },
+        // shoulder
+        {
+          id: 1293,
+          workouts_needed: [
+            {
+              workout_name: "Single Leg Leg Press",
+              goal: {
+                weight: 80,
+                sets: 5,
+                min_reps: 10,
+                max_reps: 15,
+              },
+              notes: "legs @ 3 ",
+              muscles_worked: ["Quads"],
+            },
+            {
+              workout_name: "Single Leg RDL",
+              goal: {
+                weight: 25,
+                sets: 4,
+                min_reps: 12,
+                max_reps: 18,
+              },
+              notes: "start with left leg",
+              muscles_worked: ["Hamstrings", "Glutes"],
+            },
+            {
+              workout_name: "Single Leg Calve Raise",
+              goal: {
+                weight: 30,
+                sets: 4,
+                min_reps: 10,
+                max_reps: 16,
+              },
+              notes: null,
+              muscles_worked: ["Calves"],
+            },
+            {
+              workout_name: "Quad Extensions",
+              goal: {
+                weight: 40,
+                sets: 3,
+                min_reps: 12,
+                max_reps: 18,
+              },
+              notes: null,
+              muscles_worked: ["Quads"],
+            },
+            {
+              workout_name: "Bicep Curls",
+              goal: {
+                weight: 20,
+                sets: 3,
+                min_reps: 15,
+                max_reps: 20,
+              },
+              notes: null,
+              muscles_worked: ["Biceps"],
+            },
+            {
+              workout_name: "Side Delt Raise Dumbbell ",
+              goal: {
+                weight: 15,
+                sets: 3,
+                min_reps: 9,
+                max_reps: 15,
+              },
+              notes: null,
+              muscles_worked: ["Side Delts"],
+            },
+          ],
+        },
+        // arms
+        {
+          id: 113,
+          workouts_needed: [
+            {
+              workout_name: "Bent Over Back Row",
+              goal: {
+                weight: 60,
+                sets: 4,
+                min_reps: 11,
+                max_reps: 15,
+              },
+              notes: null,
+              muscles_worked: ["Upper Back"],
+            },
+            {
+              workout_name: "Bent Over Lat Row",
+              goal: {
+                weight: 60,
+                sets: 4,
+                min_reps: 11,
+                max_reps: 15,
+              },
+              notes: null,
+              muscles_worked: ["Lats"],
+            },
+            {
+              workout_name: "Chest Fly",
+              goal: {
+                weight: 90,
+                sets: 4,
+                min_reps: 12,
+                max_reps: 18,
+              },
+              notes: "- seat @4)",
+              muscles_worked: ["Chest"],
+            },
+            {
+              workout_name: "Tricep Overhead Extension",
+              goal: {
+                weight: 16.5,
+                sets: 5,
+                min_reps: 13,
+                max_reps: 18,
+              },
+              notes: null,
+              muscles_worked: ["Triceps"],
+            },
+            {
+              workout_name: "Side Delt Raise Dumbbell ",
+              goal: {
+                weight: 15,
+                sets: 3,
+                min_reps: 9,
+                max_reps: 15,
+              },
+              notes: null,
+              muscles_worked: ["Side Delts"],
+            },
+          ],
+        },
+        // legs
+        {
+          id: 114,
+
+          workouts_needed: [
+            {
+              workout_name: "Single Leg Leg Press",
+              goal: {
+                weight: 80,
+                sets: 5,
+                min_reps: 10,
+                max_reps: 15,
+              },
+              notes: "legs @ 3 ",
+              muscles_worked: ["Quads"],
+            },
+            {
+              workout_name: "Hamstring Curls",
+              goal: {
+                weight: 90,
+                sets: 5,
+                min_reps: 14,
+                max_reps: 18,
+              },
+              notes: null,
+              muscles_worked: ["Hamstrings"],
+            },
+            {
+              workout_name: "Single Leg Calve Raise",
+              goal: {
+                weight: 30,
+                sets: 4,
+                min_reps: 10,
+                max_reps: 16,
+              },
+              notes: null,
+              muscles_worked: ["Calves"],
+            },
+            {
+              workout_name: "Quad Extensions",
+              goal: {
+                weight: 40,
+                sets: 3,
+                min_reps: 12,
+                max_reps: 16,
+              },
+              notes: null,
+              muscles_worked: ["Quads"],
+            },
+            {
+              workout_name: "Tricep Overhead Extension",
+              goal: {
+                weight: 16.5,
+                sets: 5,
+                min_reps: 13,
+                max_reps: 18,
+              },
+              notes: null,
+              muscles_worked: ["Triceps"],
+            },
+            {
+              workout_name: "Bicep Curls",
+              goal: {
+                weight: 20,
+                sets: 3,
+                min_reps: 15,
+                max_reps: 20,
+              },
+              notes: null,
+              muscles_worked: ["Biceps"],
+            },
+            {
+              workout_name: "Side Delt Raise Dumbbell ",
+              goal: {
+                weight: 15,
+                sets: 3,
+                min_reps: 9,
+                max_reps: 15,
+              },
+              notes: null,
+              muscles_worked: ["Side Delts"],
+            },
+          ],
+        },
+      ],
+    },
+    {
       id: 100,
       // 2.33 mins in secs
       rest_duration: 140,
