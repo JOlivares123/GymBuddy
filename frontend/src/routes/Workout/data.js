@@ -24,7 +24,7 @@ export const data = {
             {
               workout_name: "Neutral Bench Press Machine",
               goal: {
-                weight: 120,
+                weight: 110,
                 sets: 4,
                 min_reps: 10,
                 max_reps: 15,
@@ -37,8 +37,8 @@ export const data = {
               goal: {
                 weight: 77,
                 sets: 4,
-                min_reps: 13,
-                max_reps: 15,
+                min_reps: 16,
+                max_reps: 20,
               },
               notes: null,
               muscles_worked: ["Lats"],
@@ -48,8 +48,8 @@ export const data = {
               workout_name: "Bicep Curls",
               goal: {
                 weight: 20,
-                sets: 4,
-                min_reps: 15,
+                sets: 5,
+                min_reps: 13,
                 max_reps: 20,
               },
               notes: null,
@@ -79,30 +79,28 @@ export const data = {
             },
           ],
         },
-        // shoulder
         {
           id: 1293,
           workouts_needed: [
             {
               workout_name: "Single Leg Leg Press",
               goal: {
-                weight: 80,
+                weight: 60,
                 sets: 5,
                 min_reps: 10,
-                max_reps: 15,
+                max_reps: 18,
               },
-              notes: "legs @ 3 ",
+              notes: "legs @ 1 ",
               muscles_worked: ["Quads"],
             },
             {
-              workout_name: "Single Leg RDL",
+              workout_name: "RDL",
               goal: {
-                weight: 25,
+                weight: 50,
                 sets: 4,
                 min_reps: 12,
                 max_reps: 18,
               },
-              notes: "start with left leg",
               muscles_worked: ["Hamstrings", "Glutes"],
             },
             {
@@ -128,26 +126,26 @@ export const data = {
               muscles_worked: ["Quads"],
             },
             {
-              workout_name: "Bicep Curls",
+              workout_name: "Hip Thrust",
               goal: {
-                weight: 20,
+                weight: 30,
                 sets: 3,
-                min_reps: 15,
-                max_reps: 20,
+                min_reps: 12,
+                max_reps: 18,
               },
               notes: null,
-              muscles_worked: ["Biceps"],
+              muscles_worked: ["Glutes"],
             },
             {
-              workout_name: "Side Delt Raise Dumbbell ",
+              workout_name: "Leg Curl",
               goal: {
                 weight: 15,
-                sets: 3,
+                sets: 4,
                 min_reps: 9,
                 max_reps: 15,
               },
               notes: null,
-              muscles_worked: ["Side Delts"],
+              muscles_worked: ["Hamstrings"],
             },
           ],
         },
@@ -160,7 +158,7 @@ export const data = {
               goal: {
                 weight: 60,
                 sets: 4,
-                min_reps: 11,
+                min_reps: 9,
                 max_reps: 15,
               },
               notes: null,
@@ -200,6 +198,17 @@ export const data = {
               muscles_worked: ["Triceps"],
             },
             {
+              workout_name: "Bicep Curls",
+              goal: {
+                weight: 20,
+                sets: 3,
+                min_reps: 13,
+                max_reps: 20,
+              },
+              notes: null,
+              muscles_worked: ["Biceps"],
+            },
+            {
               workout_name: "Side Delt Raise Dumbbell ",
               goal: {
                 weight: 15,
@@ -220,12 +229,12 @@ export const data = {
             {
               workout_name: "Single Leg Leg Press",
               goal: {
-                weight: 80,
+                weight: 60,
                 sets: 5,
                 min_reps: 10,
-                max_reps: 15,
+                max_reps: 18,
               },
-              notes: "legs @ 3 ",
+              notes: "legs @ 1 ",
               muscles_worked: ["Quads"],
             },
             {
@@ -254,7 +263,7 @@ export const data = {
               workout_name: "Quad Extensions",
               goal: {
                 weight: 40,
-                sets: 3,
+                sets: 4,
                 min_reps: 12,
                 max_reps: 16,
               },
@@ -262,37 +271,25 @@ export const data = {
               muscles_worked: ["Quads"],
             },
             {
-              workout_name: "Tricep Overhead Extension",
+              workout_name: "Hip Thrust",
               goal: {
-                weight: 16.5,
-                sets: 5,
-                min_reps: 13,
+                weight: 30,
+                sets: 3,
+                min_reps: 12,
                 max_reps: 18,
               },
               notes: null,
-              muscles_worked: ["Triceps"],
+              muscles_worked: ["Glutes"],
             },
             {
-              workout_name: "Bicep Curls",
+              workout_name: "RDL",
               goal: {
-                weight: 20,
-                sets: 3,
-                min_reps: 15,
-                max_reps: 20,
+                weight: 50,
+                sets: 4,
+                min_reps: 12,
+                max_reps: 18,
               },
-              notes: null,
-              muscles_worked: ["Biceps"],
-            },
-            {
-              workout_name: "Side Delt Raise Dumbbell ",
-              goal: {
-                weight: 15,
-                sets: 3,
-                min_reps: 9,
-                max_reps: 15,
-              },
-              notes: null,
-              muscles_worked: ["Side Delts"],
+              muscles_worked: ["Hamstrings", "Glutes"],
             },
           ],
         },
